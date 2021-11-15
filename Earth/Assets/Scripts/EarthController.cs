@@ -1,0 +1,21 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class EarthController : MonoBehaviour
+{
+    private float horizontalInput, verticalInput;
+
+    private void Update()
+    {
+        horizontalInput = Input.GetAxisRaw("Horizontal");
+        verticalInput = Input.GetAxisRaw("Vertical");
+    }
+
+    private void FixedUpdate()
+    {
+        transform.Rotate(Vector3.up * horizontalInput);
+        transform.Rotate(Vector3.left * verticalInput);      
+    }
+
+}
