@@ -8,7 +8,6 @@ public class ReadInput : MonoBehaviour
 
     void Update()
     {
-
         MouseInput();
     }
 

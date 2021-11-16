@@ -8,12 +8,6 @@ public class EarthController : MonoBehaviour
     private float horizontalInput, verticalInput;
     [SerializeField] private bool isDragged;
 
-    private void Update()
-    {
-        
-
-    }
-
     private void FixedUpdate()
     {
         transform.Rotate(Vector3.up * horizontalInput);
@@ -29,7 +23,6 @@ public class EarthController : MonoBehaviour
 
     private void OnMouseDrag()
     {
-        Debug.Log("HEHE");
         EarthMove();
     }
 
