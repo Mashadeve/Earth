@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ReadInput : MonoBehaviour
 {
-    [SerializeField] private bool canDrag;
+    [SerializeField] public bool canDrag;
 
     void Update()
     {
