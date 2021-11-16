@@ -10,13 +10,8 @@ public class EarthController : MonoBehaviour
 
     private void Update()
     {
-        if (isDragged)
-        {
-            horizontalInput = 0;
-            verticalInput = 0;
-            if (!mouseOverSphere.canDrag) return;
-            EarthMove();
-        }
+        
+
     }
 
     private void FixedUpdate()
@@ -27,19 +22,21 @@ public class EarthController : MonoBehaviour
 
     private void EarthMove()
     {
-
+        if (!mouseOverSphere.canDrag) return;
         horizontalInput = Input.mousePosition.normalized.x;
         verticalInput = Input.mousePosition.normalized.y;
     }
 
     private void OnMouseDrag()
     {
-        isDragged = true; 
+        Debug.Log("HEHE");
+        EarthMove();
     }
 
     private void OnMouseUp()
     {
-        isDragged = false;
+        horizontalInput = 0;
+        verticalInput = 0;
     }
 
 }
