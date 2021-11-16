@@ -6,16 +6,17 @@ public class EarthController : MonoBehaviour
 {
     [SerializeField] private ReadInput mouseInput;
     private float horizontalInput, verticalInput;
-    private bool movement;
 
 
     private void Update()
     {
-        if (!mouseInput.canDrag == true)
-        {
-            horizontalInput = Input.mousePosition.normalized.x;
-            verticalInput = Input.mousePosition.normalized.y;
-        }      
+        horizontalInput = 0;
+        verticalInput = 0;
+
+        if (!mouseInput.canDrag) return;
+
+        horizontalInput = Input.mousePosition.normalized.x;
+        verticalInput = Input.mousePosition.normalized.y;
         
     }
 
@@ -24,4 +25,5 @@ public class EarthController : MonoBehaviour
         transform.Rotate(Vector3.up * horizontalInput);
         transform.Rotate(Vector3.left * verticalInput);      
     }
+
 }
