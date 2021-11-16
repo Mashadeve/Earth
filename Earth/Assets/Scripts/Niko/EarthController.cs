@@ -10,15 +10,14 @@ public class EarthController : MonoBehaviour
 
     private void Update()
     {
-        if (mouseInput.canDrag == true)
-        {          
-            horizontalInput = Input.mousePosition.normalized.x;
-            verticalInput = Input.mousePosition.normalized.y;
-        } 
-        else if (mouseInput.canDrag == false)
-        {
-            
-        }
+        horizontalInput = 0;
+        verticalInput = 0;
+
+        if (!mouseInput.canDrag) return;
+
+        horizontalInput = Input.mousePosition.normalized.x;
+        verticalInput = Input.mousePosition.normalized.y;
+        
     }
 
     private void FixedUpdate()
