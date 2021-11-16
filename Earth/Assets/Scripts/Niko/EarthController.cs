@@ -17,7 +17,8 @@ public class EarthController : MonoBehaviour
 
         horizontalInput = Input.mousePosition.normalized.x;
         verticalInput = Input.mousePosition.normalized.y;
-        
+
+        Debug.Log(horizontalInput = 0);
     }
 
     private void FixedUpdate()
@@ -25,5 +26,5 @@ public class EarthController : MonoBehaviour
         transform.Rotate(Vector3.up * horizontalInput);
         transform.Rotate(Vector3.left * verticalInput);      
     }
-
+    
 }
