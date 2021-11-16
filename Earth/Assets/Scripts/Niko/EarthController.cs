@@ -8,8 +8,11 @@ public class EarthController : MonoBehaviour
 
     private void Update()
     {
-        horizontalInput = Input.mousePosition.normalized.x;
-        verticalInput = Input.mousePosition.normalized.y;
+        if (MouseInput == true)
+        {
+            horizontalInput = Input.mousePosition.normalized.x;
+            verticalInput = Input.mousePosition.normalized.y;
+        }        
     }
 
     private void FixedUpdate()
