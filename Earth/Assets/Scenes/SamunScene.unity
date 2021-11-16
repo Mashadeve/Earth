@@ -224,6 +224,32 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.049999673
   m_Center: {x: -0.0000000018626451, y: -0.00000009872018, z: 0}
+--- !u!114 &863622669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 863622664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7738ad0f44b412c479f43ac844d28ae1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouseOverSphere: {fileID: 863622670}
+--- !u!114 &863622670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 863622664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d05f989e6e793d54dab3b3a803b11e70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canDrag: 0
 --- !u!1001 &1180218378
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -309,37 +335,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b0d161443743fa4bac1425de745a0de, type: 3}
---- !u!1 &1331763138 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 9b0d161443743fa4bac1425de745a0de, type: 3}
-  m_PrefabInstance: {fileID: 1180218378}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1331763139
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1331763138}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d05f989e6e793d54dab3b3a803b11e70, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canDrag: 0
---- !u!114 &1331763140
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1331763138}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7738ad0f44b412c479f43ac844d28ae1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mouseInput: {fileID: 1331763139}
 --- !u!1 &2077002559
 GameObject:
   m_ObjectHideFlags: 0
