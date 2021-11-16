@@ -8,19 +8,20 @@ public class ReadInput : MonoBehaviour
 
     void Update()
     {
+
+        MouseInput();
+    }
+
+    public void MouseInput()
+    {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hitData;
 
-        if (Physics.Raycast(ray, out hitData, 100) && hitData.transform.tag == "Earth")
-        {
-            Debug.Log("Mouse is over the Earth");
-            canDrag = true;
 
-        }
-        else
-        {
-            Debug.Log("Mouse is not over the Earth");
-            canDrag = false;
-        }
+        Physics.Raycast(ray, out hitData, 100);
+        canDrag = false;
+
+        if (hitData.collider == null) return;
+        canDrag = true;
     }
 }
