@@ -321,38 +321,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!1 &1858093424 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 9b0d161443743fa4bac1425de745a0de, type: 3}
-  m_PrefabInstance: {fileID: 609820988}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1858093426
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1858093424}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d05f989e6e793d54dab3b3a803b11e70, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canDrag: 0
---- !u!114 &1858093427
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1858093424}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7738ad0f44b412c479f43ac844d28ae1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mouseOverSphere: {fileID: 0}
-  isDragged: 0
 --- !u!1 &2029253553
 GameObject:
   m_ObjectHideFlags: 0
@@ -364,6 +332,7 @@ GameObject:
   - component: {fileID: 2029253556}
   - component: {fileID: 2029253555}
   - component: {fileID: 2029253554}
+  - component: {fileID: 2029253557}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -436,11 +405,67 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2029253557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2029253553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36b95deac7893924a90f7f0c81459849, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2062286077 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -1018664272722485354, guid: 9b0d161443743fa4bac1425de745a0de, type: 3}
   m_PrefabInstance: {fileID: 609820988}
   m_PrefabAsset: {fileID: 0}
+--- !u!54 &2062286079
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2062286077}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 1
+  m_AngularDrag: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &2062286080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2062286077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7738ad0f44b412c479f43ac844d28ae1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouseOverSphere: {fileID: 2062286081}
+  isDragged: 0
+  rb: {fileID: 2062286079}
+--- !u!114 &2062286081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2062286077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d05f989e6e793d54dab3b3a803b11e70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canDrag: 0
 --- !u!135 &2062286083
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -454,3 +479,15 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.049999673
   m_Center: {x: -0.0000000018626451, y: -0.00000009872018, z: 0}
+--- !u!114 &2062286085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2062286077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad0005e3873572e4f8b6dd477aa2f0ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
