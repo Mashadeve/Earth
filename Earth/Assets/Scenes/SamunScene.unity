@@ -249,21 +249,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7738ad0f44b412c479f43ac844d28ae1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseOverSphere: {fileID: 863622670}
+  mouseOverSphere: {fileID: 0}
   isDragged: 0
---- !u!114 &863622670
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 863622664}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d05f989e6e793d54dab3b3a803b11e70, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canDrag: 0
 --- !u!1001 &1180218378
 PrefabInstance:
   m_ObjectHideFlags: 0
