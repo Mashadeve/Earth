@@ -33,9 +33,9 @@ public class MouseInput : MonoBehaviour
         GetScreenPosition();
         GetBoundedScreenPosition();
         GetWorldPosition(Camera.main, 10f);
-        Debug.Log("mouseScreenPosX " + math.round(mouseScreenPos.x));
-        Debug.Log("mouseScreenPosY " + math.round(mouseScreenPos.y));
+        //Debug.Log("mouseScreenPosX " + math.round(mouseScreenPos.x));
+        //Debug.Log("mouseScreenPosY " + math.round(mouseScreenPos.y));
         Ray ray = new Ray(mouseScreenPos, Vector3.forward);
-        Debug.DrawRay(mouseScreenPos, Vector3.forward, Color.red, 50f);
+        //Debug.DrawRay(mouseScreenPos, Vector3.forward, Color.red, 50f);
     }
 }

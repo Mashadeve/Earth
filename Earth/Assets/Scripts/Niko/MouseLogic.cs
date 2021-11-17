@@ -6,7 +6,6 @@ public class MouseLogic : MonoBehaviour
 {
     private Vector3 startPosition, worldPos, mousePosCurrent, currentMousePos;
     private float distance;
-    [SerializeField] private GameObject point;
     Camera cam;
 
     private void Start()
@@ -16,7 +15,6 @@ public class MouseLogic : MonoBehaviour
     }
     private void Update()
     {
-        point.transform.position = currentMousePos;
         OnMoveTouch();
     }
     
@@ -27,7 +25,7 @@ public class MouseLogic : MonoBehaviour
         currentMousePos = cam.ViewportToWorldPoint(mousePosCurrent);
         currentMousePos.z = 0f;
         
-        Debug.Log(currentMousePos);
+        //Debug.Log(currentMousePos);
 
         //currentMousePos.z = 0f;
         //transform.position = currentMousePos;
