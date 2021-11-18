@@ -5,6 +5,7 @@ using UnityEngine;
 public class EarthController : MonoBehaviour
 {
     [SerializeField] private ReadInput mouseOverSphere;
+
     private float horizontalInput, verticalInput;
     [SerializeField] private bool isDragged;
     public Rigidbody rb;
