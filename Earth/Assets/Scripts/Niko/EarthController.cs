@@ -9,17 +9,20 @@ public class EarthController : MonoBehaviour
     private float horizontalInput, verticalInput;
     [SerializeField] private bool isDragged;
     public Rigidbody rb;
-    private float rotationSpeed = 1500f;
+    [SerializeField] private float rotationSpeed = 1500f;
+    [SerializeField] private float multiplier;
 
     private void FixedUpdate()
     {
+        
+
         if (isDragged)
         {
             //float x = Input.GetAxis("Mouse X") * rotationSpeed * Time.fixedDeltaTime;
             //float y = Input.GetAxis("Mouse Y") * rotationSpeed * Time.fixedDeltaTime;
 
             rb.AddTorque(Vector3.down * horizontalInput);
-            rb.AddTorque(Vector3.right * verticalInput);
+            //rb.AddTorque(Vector3.right * horizontalInput);
 
         }       
     }
@@ -27,9 +30,10 @@ public class EarthController : MonoBehaviour
     private void EarthMove()
     {
         if (!mouseOverSphere.canDrag) return;
-        horizontalInput = Input.GetAxis("Mouse X") * rotationSpeed * Time.fixedDeltaTime;
-        verticalInput = Input.GetAxis("Mouse Y") * rotationSpeed * Time.fixedDeltaTime;
+        horizontalInput = Input.GetAxis("Mouse X") * rotationSpeed * multiplier * Time.fixedDeltaTime;
+        verticalInput = Input.GetAxis("Mouse Y") * rotationSpeed * multiplier * Time.fixedDeltaTime;
     }
+
 
     private void OnMouseDrag()
     {
