@@ -5,6 +5,7 @@ using Unity.Mathematics;
 
 public class MouseInput : MonoBehaviour
 {
+    [SerializeField] private LayerMask layermask;
     private static float3 mouseScreenPos;
 
     public static float2 GetScreenPosition()
@@ -36,6 +37,13 @@ public class MouseInput : MonoBehaviour
         //Debug.Log("mouseScreenPosX " + math.round(mouseScreenPos.x));
         //Debug.Log("mouseScreenPosY " + math.round(mouseScreenPos.y));
         Ray ray = new Ray(mouseScreenPos, Vector3.forward);
-        //Debug.DrawRay(mouseScreenPos, Vector3.forward, Color.red, 50f);
+        RaycastHit hit;
+        Physics.Raycast(ray, out hit, layermask);
+        Debug.DrawRay(ray.origin, ray.direction, Color.red, 50f);
+
+        if (hit.collider == null) return;
+        var thing = hit.collider.gameObject;
+        thing.GetComponent<MeshRenderer>().material.color = Color.red;
+        Debug.Log(thing);
     }
 }
