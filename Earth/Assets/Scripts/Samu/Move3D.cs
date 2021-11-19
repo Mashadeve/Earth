@@ -20,7 +20,6 @@ public class Move3D : MonoBehaviour
 
     private void OnMouseDrag()
     {
-        this.gameObject.AddComponent<Move3D>();
         Vector3 screenPosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, cameraZDistance);
         Vector3 newWorldPosition = mainCamera.ScreenToWorldPoint(screenPosition);
 
