@@ -21,12 +21,20 @@ public class Snapper : MonoBehaviour
         }
     }
 
+    private void OnMouseUp()
+    {
+        if (target.GetComponent<Move3D>() == null)
+        {
+            target.AddComponent<Move3D>();
+        }
+    }
+
     private void OnTriggerEnter(Collider targetAnchor)
     {
         target.transform.position = targetAnchor.transform.position;
+
         Destroy(target.GetComponent<Move3D>());
 
         Debug.Log("OSUU");  
-    }    
-
+    }
 }
