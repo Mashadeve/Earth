@@ -17,7 +17,7 @@ public class ReadInput : MonoBehaviour
         RaycastHit hitData;
 
 
-        Physics.Raycast(ray, out hitData, 100f);
+        Physics.Raycast(ray, out hitData, 200f);
 
         //Debug.DrawRay(ray.origin, ray.direction, Color.red, 50f);
         
