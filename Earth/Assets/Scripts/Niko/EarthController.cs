@@ -14,31 +14,37 @@ public class EarthController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        
+        //rb.AddTorque(Vector3.down * horizontalInput);
+        //rb.AddTorque(Vector3.right * verticalInput);
 
-        if (isDragged)
+        transform.Rotate(Vector3.down * horizontalInput);
+        transform.Rotate(Vector3.right * verticalInput);
+
+        //if (isDragged)
         {
             //float x = Input.GetAxis("Mouse X") * rotationSpeed * Time.fixedDeltaTime;
             //float y = Input.GetAxis("Mouse Y") * rotationSpeed * Time.fixedDeltaTime;
 
-            rb.AddTorque(Vector3.down * horizontalInput);
-            //rb.AddTorque(Vector3.right * horizontalInput);
+ 
 
         }       
     }
 
     private void EarthMove()
     {
-        if (!mouseOverSphere.canDrag) return;
-        horizontalInput = Input.GetAxis("Mouse X") * rotationSpeed * multiplier * Time.fixedDeltaTime;
-        verticalInput = Input.GetAxis("Mouse Y") * rotationSpeed * multiplier * Time.fixedDeltaTime;
+        //if (!mouseOverSphere.canDrag) return;
+        //horizontalInput = Input.GetAxis("Mouse X") * rotationSpeed * multiplier * Time.fixedDeltaTime;
+        //verticalInput = Input.GetAxis("Mouse Y") * rotationSpeed * multiplier * Time.fixedDeltaTime;
+
+        horizontalInput = Input.GetAxis("Horizontal") * rotationSpeed * multiplier * Time.fixedDeltaTime;
+        verticalInput = Input.GetAxis("Vertical") * rotationSpeed * multiplier * Time.fixedDeltaTime;
     }
 
 
     private void OnMouseDrag()
     {
         isDragged = true;
-        EarthMove();
+        //EarthMove();
     }
 
     private void OnMouseUp()
@@ -46,6 +52,11 @@ public class EarthController : MonoBehaviour
         isDragged = false;
         horizontalInput = 0;
         verticalInput = 0;
+    }
+
+    private void Update()
+    {
+        EarthMove();
     }
 
 }
