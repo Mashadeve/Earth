@@ -5,9 +5,7 @@ using Unity.Mathematics;
 
 public class ReadInput : MonoBehaviour
 {
-    [SerializeField] public bool canDrag;
-    [SerializeField] private LayerMask layermask;
-
+    public bool canDrag;
     void Update()
     {
         MouseInput();
@@ -19,18 +17,14 @@ public class ReadInput : MonoBehaviour
         RaycastHit hitData;
 
 
-        Physics.Raycast(ray, out hitData, 100f, layermask);
+        Physics.Raycast(ray, out hitData, 200f);
 
-        Debug.DrawRay(ray.origin, ray.direction, Color.red, 50f);
-
-        if (hitData.collider == null) return;
-        var thing = hitData.collider.gameObject;
-        thing.GetComponent<MeshRenderer>().material.color = Color.red;
-        Debug.Log(thing);
-
+        //Debug.DrawRay(ray.origin, ray.direction, Color.red, 50f);
+        
         canDrag = false;
-
+        
         if (hitData.collider == null) return;
         canDrag = true;
+
     }
 }

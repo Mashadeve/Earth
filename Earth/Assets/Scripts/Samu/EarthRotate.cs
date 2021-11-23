@@ -10,6 +10,6 @@ public class EarthRotate : RotateScript
     }
     public override void RotatePlanet()
     {
-        transform.Rotate(new Vector3(0, 0, rotationSpeed) * Time.deltaTime);
+        transform.Rotate(new Vector3(0, rotationSpeed,0 ) * Time.deltaTime);
     }
 }
