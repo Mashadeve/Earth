@@ -17,8 +17,8 @@ public class EarthController : MonoBehaviour
         //rb.AddTorque(Vector3.down * horizontalInput);
         //rb.AddTorque(Vector3.right * verticalInput);
 
-        transform.Rotate(Vector3.down * horizontalInput);
-        transform.Rotate(Vector3.right * verticalInput);
+        
+        
 
         //if (isDragged)
         {
@@ -36,8 +36,8 @@ public class EarthController : MonoBehaviour
         //horizontalInput = Input.GetAxis("Mouse X") * rotationSpeed * multiplier * Time.fixedDeltaTime;
         //verticalInput = Input.GetAxis("Mouse Y") * rotationSpeed * multiplier * Time.fixedDeltaTime;
 
-        horizontalInput = Input.GetAxis("Horizontal") * rotationSpeed * multiplier * Time.fixedDeltaTime;
-        verticalInput = Input.GetAxis("Vertical") * rotationSpeed * multiplier * Time.fixedDeltaTime;
+        
+        
     }
 
 
@@ -56,7 +56,19 @@ public class EarthController : MonoBehaviour
 
     private void Update()
     {
-        EarthMove();
+        if (Input.GetAxis("Horizontal") > 0 || Input.GetAxis("Horizontal") < 0)
+        {
+            horizontalInput = Input.GetAxis("Horizontal") * rotationSpeed * multiplier * Time.fixedDeltaTime;
+            transform.Rotate(Vector3.down * horizontalInput);
+
+        }
+        else if (Input.GetAxis("Vertical") > 0 || Input.GetAxis("Vertical") < 0)
+        {
+            verticalInput = Input.GetAxis("Vertical") * rotationSpeed * multiplier * Time.fixedDeltaTime;
+            transform.Rotate(Vector3.right * verticalInput);
+        }
+
+        
     }
 
 }

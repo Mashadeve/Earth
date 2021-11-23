@@ -325,7 +325,7 @@ MonoBehaviour:
   mouseOverSphere: {fileID: 1716643717}
   isDragged: 0
   rb: {fileID: 1716643721}
-  rotationSpeed: 50
+  rotationSpeed: 5
   multiplier: 1
 --- !u!54 &1716643721
 Rigidbody:
