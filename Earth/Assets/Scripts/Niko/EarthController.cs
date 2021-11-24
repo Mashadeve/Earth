@@ -68,7 +68,7 @@ public class EarthController : MonoBehaviour
             transform.Rotate(Vector3.right * verticalInput);
         }
 
-        
+
     }
 
 }
