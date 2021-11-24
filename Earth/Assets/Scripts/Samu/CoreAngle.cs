@@ -9,7 +9,8 @@ public class CoreAngle : MonoBehaviour
 
     private void GetAngle()
     {
-        Vector3 eulerToVector3 = transform.localRotation.eulerAngles;
+        Quaternion eulerToVector3 = new Quaternion(Mathf.RoundToInt(transform.rotation.x * 180), transform.rotation.y, transform.rotation.z, transform.rotation.w);
+        Debug.Log(eulerToVector3);
         
     }
    

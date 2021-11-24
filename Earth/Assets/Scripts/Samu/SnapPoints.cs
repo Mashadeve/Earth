@@ -29,6 +29,7 @@ public class SnapPoints : MonoBehaviour
 
     private void Update()
     {
+        
         //Debug.Log("Core " + coreQuat.transform.localRotation);
         //Debug.Log("Piece " + GameObject.Find("Asia").transform.rotation.x);
         //Debug.Log("Core " + GameObject.Find("Core").transform.rotation.x);
@@ -37,10 +38,13 @@ public class SnapPoints : MonoBehaviour
         for (int i = 0; i < originalPart.Count; i++)
         {
             Vector3 pos = originalPart[i].transform.position;
+            GetAngle(originalPart[i]);
+            GetAngle(coreQuat);
             if (pos.x - copyParts[i].transform.position.x < 0.5f && pos.y - copyParts[i].transform.position.y < 0.5f && pos.x - copyParts[i].transform.position.x > -0.5f && pos.y - copyParts[i].transform.position.y > -0.5f)
             {
-                if (GameObject.Find("Asia").transform.rotation.x == GameObject.Find("Core").transform.rotation.x)
-                {
+               if (GameObject.Find("Asia").transform.rotation.x == GameObject.Find("Core").transform.rotation.x)
+               if(GetAngle(originalPart[i]).x == GetAngle(coreQuat).x)
+                    {
                     var offset = copyParts[i].transform.position;
                     //originalPart[i].transform.position = copyParts[i].transform.position;
                     copyParts[i].SetActive(true);
@@ -53,6 +57,17 @@ public class SnapPoints : MonoBehaviour
             }
         }
     }
+
+    private Quaternion GetAngle(GameObject currentObject)
+    {
+        Quaternion eulerToVector3 = new Quaternion(Mathf.RoundToInt(currentObject.transform.rotation.x * 180), transform.rotation.y, transform.rotation.z, transform.rotation.w);
+        Debug.Log(currentObject.name + " " + eulerToVector3);
+        //currentObject.transform.rotation = new Quaternion(eulerToVector3.x, eulerToVector3.y, eulerToVector3.z, eulerToVector3.w);
+        return eulerToVector3;
+
+    }
+
+    
 }
     //private void LateUpdate()
     //{
