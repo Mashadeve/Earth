@@ -6,7 +6,7 @@ public class EarthController : MonoBehaviour
 {
     [SerializeField] private ReadInput mouseOverSphere;
 
-    private float horizontalInput, verticalInput;
+    private float verticalInput, horizontalInput;
     [SerializeField] private bool isDragged;
     public Rigidbody rb;
     [SerializeField] private float rotationSpeed = 1500f;
@@ -50,8 +50,8 @@ public class EarthController : MonoBehaviour
     private void OnMouseUp()
     {
         isDragged = false;
-        horizontalInput = 0;
         verticalInput = 0;
+        horizontalInput = 0;
     }
 
     private void Update()
@@ -60,13 +60,15 @@ public class EarthController : MonoBehaviour
         {
             horizontalInput = Input.GetAxis("Horizontal") * rotationSpeed * multiplier * Time.fixedDeltaTime;
             transform.Rotate(Vector3.down * horizontalInput);
-
         }
-        else if (Input.GetAxis("Vertical") > 0 || Input.GetAxis("Vertical") < 0)
+
+        if (Input.GetAxis("Vertical") > 0 || Input.GetAxis("Vertical") < 0)
         {
             verticalInput = Input.GetAxis("Vertical") * rotationSpeed * multiplier * Time.fixedDeltaTime;
             transform.Rotate(Vector3.right * verticalInput);
+
         }
+
 
 
     }
