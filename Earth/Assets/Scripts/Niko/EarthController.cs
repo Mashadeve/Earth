@@ -8,43 +8,20 @@ public class EarthController : MonoBehaviour
 
     private float horizontalInput, verticalInput;
     [SerializeField] private bool isDragged;
-    public Rigidbody rb;
-    [SerializeField] private float rotationSpeed = 1500f;
-    [SerializeField] private float multiplier;
+    private float rotationSpeed = 1500f;
 
-    private void FixedUpdate()
-    {
-        //rb.AddTorque(Vector3.down * horizontalInput);
-        //rb.AddTorque(Vector3.right * verticalInput);
-
-        
-        
-
-        //if (isDragged)
-        {
-            //float x = Input.GetAxis("Mouse X") * rotationSpeed * Time.fixedDeltaTime;
-            //float y = Input.GetAxis("Mouse Y") * rotationSpeed * Time.fixedDeltaTime;
-
- 
-
-        }       
-    }
 
     private void EarthMove()
     {
-        //if (!mouseOverSphere.canDrag) return;
-        //horizontalInput = Input.GetAxis("Mouse X") * rotationSpeed * multiplier * Time.fixedDeltaTime;
-        //verticalInput = Input.GetAxis("Mouse Y") * rotationSpeed * multiplier * Time.fixedDeltaTime;
-
-        
-        
+        if (!mouseOverSphere.canDrag) return;
+        horizontalInput = Input.GetAxis("Mouse X") * rotationSpeed * Time.fixedDeltaTime;
+        verticalInput = Input.GetAxis("Mouse Y") * rotationSpeed * Time.fixedDeltaTime;
     }
-
 
     private void OnMouseDrag()
     {
         isDragged = true;
-        //EarthMove();
+        EarthMove();
     }
 
     private void OnMouseUp()
@@ -52,23 +29,6 @@ public class EarthController : MonoBehaviour
         isDragged = false;
         horizontalInput = 0;
         verticalInput = 0;
-    }
-
-    private void Update()
-    {
-        if (Input.GetAxis("Horizontal") > 0 || Input.GetAxis("Horizontal") < 0)
-        {
-            horizontalInput = Input.GetAxis("Horizontal") * rotationSpeed * multiplier * Time.fixedDeltaTime;
-            transform.Rotate(Vector3.down * horizontalInput);
-
-        }
-        else if (Input.GetAxis("Vertical") > 0 || Input.GetAxis("Vertical") < 0)
-        {
-            verticalInput = Input.GetAxis("Vertical") * rotationSpeed * multiplier * Time.fixedDeltaTime;
-            transform.Rotate(Vector3.right * verticalInput);
-        }
-
-        
     }
 
 }

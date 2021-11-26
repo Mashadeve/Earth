@@ -16,7 +16,7 @@ public class Move3D : MonoBehaviour
     {
         mainCamera = Camera.main;
         cameraZDistance = mainCamera.WorldToScreenPoint(transform.position).z;
-    }
+    }   
 
     private void OnMouseDrag()
     {
@@ -25,5 +25,4 @@ public class Move3D : MonoBehaviour
 
         transform.position = new Vector3(newWorldPosition.x, newWorldPosition.y, gameObject.transform.position.z);
     }
-
 }
