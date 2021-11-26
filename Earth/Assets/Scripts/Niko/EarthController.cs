@@ -8,21 +8,8 @@ public class EarthController : MonoBehaviour
 
     private float horizontalInput, verticalInput;
     [SerializeField] private bool isDragged;
-    public Rigidbody rb;
     private float rotationSpeed = 1500f;
 
-    private void FixedUpdate()
-    {
-        if (isDragged)
-        {
-            //float x = Input.GetAxis("Mouse X") * rotationSpeed * Time.fixedDeltaTime;
-            //float y = Input.GetAxis("Mouse Y") * rotationSpeed * Time.fixedDeltaTime;
-
-            rb.AddTorque(Vector3.down * horizontalInput);
-            rb.AddTorque(Vector3.right * verticalInput);
-
-        }       
-    }
 
     private void EarthMove()
     {
