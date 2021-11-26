@@ -13,6 +13,11 @@ public class TextBoxManager : MonoBehaviour
         textBox.SetActive(false);
     }
 
+    private void Update()
+    {
+        textBox.transform.localRotation = new Quaternion(0, 0, 0, 0);
+    }
+
     private void OnMouseOver()
     {
         if (textBox == null)
