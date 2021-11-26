@@ -435,23 +435,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canDrag: 0
---- !u!114 &1716643720
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4295731778061945362}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7738ad0f44b412c479f43ac844d28ae1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mouseOverSphere: {fileID: 1716643717}
-  isDragged: 0
-  rb: {fileID: 1716643721}
-  rotationSpeed: 5
-  multiplier: 1
 --- !u!54 &1716643721
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1339,7 +1322,7 @@ GameObject:
   - component: {fileID: 1716643721}
   - component: {fileID: 1716643722}
   - component: {fileID: 1716643717}
-  - component: {fileID: 1716643720}
+  - component: {fileID: 4295731778061945363}
   m_Layer: 0
   m_Name: Core
   m_TagString: Untagged
@@ -1347,6 +1330,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &4295731778061945363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4295731778061945362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c42827195dc55f418e050c47e1f75c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouseOverSphere: {fileID: 1716643717}
+  isDragged: 0
+  rb: {fileID: 1716643721}
+  rotationSpeed: 1500
+  multiplier: 2
 --- !u!1 &4424396827776285945
 GameObject:
   m_ObjectHideFlags: 0
