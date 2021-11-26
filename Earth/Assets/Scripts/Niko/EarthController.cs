@@ -62,12 +62,7 @@ public class EarthController : MonoBehaviour
             transform.Rotate(Vector3.down * horizontalInput);
         }
 
-        if (Input.GetAxis("Vertical") > 0 || Input.GetAxis("Vertical") < 0)
-        {
-            verticalInput = Input.GetAxis("Vertical") * rotationSpeed * multiplier * Time.fixedDeltaTime;
-            transform.Rotate(Vector3.right * verticalInput);
 
-        }
 
 
 
