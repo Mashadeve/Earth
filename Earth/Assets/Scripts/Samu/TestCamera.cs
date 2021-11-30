@@ -9,11 +9,12 @@ public class TestCamera : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetAxis("Vertical") > 0 || Input.GetAxis("Vertical") < 0)
-        {
-            transform.Translate(new Vector3(0, Input.GetAxis("Vertical") * Time.deltaTime * 50));
-            //transform.position = new Vector3(0,Input.GetAxis("Vertical") * Time.deltaTime * 100,-63);
-        }
+        CameraTilt();
+        //if (Input.GetAxis("Vertical") > 0 || Input.GetAxis("Vertical") < 0)
+        //{
+        //    transform.Translate(new Vector3(0, Input.GetAxis("Vertical") * Time.deltaTime * 50));
+        //    //transform.position = new Vector3(0,Input.GetAxis("Vertical") * Time.deltaTime * 100,-63);
+        //}
         //if (Input.GetAxis("Horizontal") > 0 || Input.GetAxis("Horizontal") < 0)
         //{
         //    transform.Translate(new Vector3( Input.GetAxis("Horizontal") * Time.deltaTime * 50,0));
@@ -36,5 +37,17 @@ public class TestCamera : MonoBehaviour
         //}
         // Same as above, but setting the worldUp parameter to Vector3.left in this example turns the camera on its side
         //transform.LookAt(target, Vector3.left);
+    }
+
+    private void CameraTilt()
+    {
+        if (Input.GetAxis("Vertical") > 0 && transform.rotation.x < 0.6f)
+        {
+            transform.Translate(new Vector3(0, Input.GetAxis("Vertical") * Time.deltaTime * 50));
+            //transform.position = new Vector3(0,Input.GetAxis("Vertical") * Time.deltaTime * 100,-63);
+        }else if (Input.GetAxis("Vertical") < 0 && transform.rotation.x > -0.6f)
+        {
+            transform.Translate(new Vector3(0, Input.GetAxis("Vertical") * Time.deltaTime * 50));
+        }
     }
 }
