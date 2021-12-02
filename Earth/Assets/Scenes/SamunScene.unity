@@ -152,7 +152,7 @@ GameObject:
   - component: {fileID: 441922495}
   - component: {fileID: 441922499}
   m_Layer: 0
-  m_Name: Cylinder
+  m_Name: Earth_10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
