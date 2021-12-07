@@ -9,20 +9,19 @@ public class CreateAPlayer : MonoBehaviour
 {
     [SerializeField] private GameObject inputField;
     [SerializeField] private GameObject textDisplay;
-    SaveData playerDB;
+    [SerializeField] private SaveData playerData;
     string playerName;
 
     public void StoreName()
     {
-        playerDB = GameObject.Find("GameManager").GetComponent<SaveData>();
-        playerDB.playerNickname = inputField.GetComponent<TMP_Text>().text;
-        playerDB.SaveGame();
+        playerData.playerNickname = inputField.GetComponent<TMP_Text>().text;
+        playerData.SaveGame();
         //SceneManager.LoadScene(1);   
     }
 
     public void LoadName()
     {
-        playerDB.LoadData();
-        Debug.Log(playerDB.playerNickname);
+        playerData.LoadData();
+        Debug.Log(playerData.playerNickname);
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 using System.IO;
 
 [System.Serializable]
-public class SaveData : MonoBehaviour
+public class SaveData
 {
     public string playerNickname;
     //public int highscore;
