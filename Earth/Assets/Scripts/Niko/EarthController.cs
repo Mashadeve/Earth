@@ -20,13 +20,13 @@ public class EarthController : MonoBehaviour
 
     private void OnMouseDrag()
     {
-        isDragged = true;
+        
         EarthMove();
     }
 
     private void OnMouseUp()
     {
-        isDragged = false;
+        
         horizontalInput = 0;
         verticalInput = 0;
     }
