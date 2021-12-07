@@ -3,12 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 
-[System.Serializable]
-public class SaveData
+public class GameData : MonoBehaviour
 {
     public string playerNickname;
-    //public int highscore;
 
+    [System.Serializable]
+    public class SaveData
+    {
+        public string playerNickname;
+        //public int highscore;
+
+    }
     public void SaveGame()
     {
         SaveData data = new SaveData();
@@ -30,7 +35,8 @@ public class SaveData
             playerNickname = data.playerNickname;
         }
 
+        Debug.Log("Kutsutaan load metodia");
     }
 
-}
 
+}
