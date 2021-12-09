@@ -7,7 +7,8 @@ public class Snapper : MonoBehaviour
     public GameObject target, targetAnchor;
 
     private void OnMouseDown()
-    {
+    {        
+
         if (target.transform.position == targetAnchor.transform.position)
         {
             if (target.GetComponent<Move3D>() == null)
@@ -19,6 +20,7 @@ public class Snapper : MonoBehaviour
         {
             return;
         }
+
     }
 
     private void OnMouseUp()
