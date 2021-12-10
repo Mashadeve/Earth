@@ -9,6 +9,8 @@ public class TestCamera : MonoBehaviour
 
     void Update()
     {
+       
+
         CameraTilt();
         //if (Input.GetAxis("Vertical") > 0 || Input.GetAxis("Vertical") < 0)
         //{

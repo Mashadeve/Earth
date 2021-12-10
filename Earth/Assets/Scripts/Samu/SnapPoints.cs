@@ -10,11 +10,12 @@ public class SnapPoints : MonoBehaviour
     [SerializeField] private GameObject coreQuat;
     private CoreAngle coreAngle;
     private bool canSnap;
+    private int objectsIsPlaced;
 
 
     private void Start()
     {
-        Enumerable.Range(-45, 10);
+        //Enumerable.Range(-45, 10);
 
         for (int i = 0; i < originalPart.Count; i++)
         {
@@ -31,45 +32,46 @@ public class SnapPoints : MonoBehaviour
             originalPart[i].transform.position = new Vector3(-41 + i * 15, 20);
         }
 
+
         coreAngle = coreQuat.GetComponent<CoreAngle>();
-        
+
     }
 
 
     private void Update()
     {
-        
-        
-        //Debug.Log("Core " + coreQuat.transform.localRotation);
-        //Debug.Log("Piece " + GameObject.Find("Asia").transform.rotation.x);
-        //Debug.Log("Core " + GameObject.Find("Core").transform.rotation.x);
-
+        if (objectsIsPlaced == copyParts.Count)
+        {
+            Debug.Log("Läpäisit pelin");
+        }
 
         for (int i = 0; i < originalPart.Count; i++)
         {
             Vector3 pos = originalPart[i].transform.position;
-            Debug.Log("Angle " + CalcAngle(coreQuat, originalPart[i]));
+            //Debug.Log("Angle " + CalcAngle(coreQuat, originalPart[i]));
             if (pos.x - copyParts[i].transform.position.x < 0.5f && pos.y - copyParts[i].transform.position.y < 0.5f && pos.x - copyParts[i].transform.position.x > -0.5f && pos.y - copyParts[i].transform.position.y > -0.5f)
             {
-                
+
                 //if (originalPart[i].GetComponent<CoreAngle>().angle == coreAngle.angle)
                 if (CalcAngle(coreQuat, originalPart[i]))
-               {
+                {
                     //var offset = copyParts[i].transform.position;
                     //originalPart[i].transform.position = copyParts[i].transform.position;
                     copyParts[i].SetActive(true);
                     copyParts[i].transform.SetParent(GameObject.Find("Core").transform);
                     copyParts[i].transform.rotation = GameObject.Find("Core").transform.rotation;
                     copyParts[i].transform.position = new Vector3(GameObject.Find("Core").transform.position.x, GameObject.Find("Core").transform.position.y);
+                    if (copyParts[i].tag != "IsPlaced")
+                    {
+                        TagTheObject(copyParts[i]);
+                    }
                     originalPart[i].SetActive(false);
                     canSnap = false;
-                    
                 }
-                //originalPart.Remove(originalPart[i]);
             }
         }
     }
-    
+
     private bool CalcAngle(GameObject core, GameObject target)
     {
         var coreQuat = core.transform.rotation;
@@ -82,6 +84,12 @@ public class SnapPoints : MonoBehaviour
             canSnap = true;
         }
         return canSnap;
+    }
+
+    private void TagTheObject(GameObject obj)
+    {
+        obj.gameObject.tag = "IsPlaced";
+        objectsIsPlaced++;
     }
 }
     //private void LateUpdate()
