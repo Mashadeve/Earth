@@ -4,14 +4,15 @@ public class PartRaycast : MonoBehaviour
 {
     private Camera mainCamera;
     private float cameraZDistance;
-    [SerializeField] private LayerMask layerMask;
+    [SerializeField] private GameObject origin;
+    //[SerializeField] private LayerMask layerMask;
     private void Start()
     {
         mainCamera = Camera.main;
         cameraZDistance = mainCamera.WorldToScreenPoint(transform.position).z;
     }
     private void OnMouseDrag()
-    {
+    { 
         Vector3 screenPosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, cameraZDistance);
         Vector3 newWorldPosition = mainCamera.ScreenToWorldPoint(screenPosition);
 
@@ -25,7 +26,7 @@ public class PartRaycast : MonoBehaviour
         Vector3 screenPosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, cameraZDistance);
         Vector3 newWorldPosition = mainCamera.ScreenToWorldPoint(screenPosition);
 
-        Ray ray = new Ray(screenPosition, newWorldPosition);
+        Ray ray = new Ray(mainCamera.transform.position, gameObject.transform.position);
         Debug.DrawRay(ray.origin, ray.direction, Color.blue);
         //RaycastHit hit;
         //Physics.Raycast(ray, out hit, layerMask);

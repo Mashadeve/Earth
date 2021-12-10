@@ -34,9 +34,5 @@ public class GameData : MonoBehaviour
 
             playerNickname = data.playerNickname;
         }
-
-        Debug.Log("Kutsutaan load metodia");
     }
-
-
 }

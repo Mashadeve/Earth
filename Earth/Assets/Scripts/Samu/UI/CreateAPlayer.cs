@@ -12,16 +12,23 @@ public class CreateAPlayer : MonoBehaviour
     [SerializeField] private GameData playerData;
     string playerName;
 
-    public void StoreName()
+    private void Awake()
     {
         playerData = GameObject.Find("GameManager").GetComponent<GameData>();
+    }
+
+    public void StoreName()
+    {
+        
         playerData.playerNickname = inputField.GetComponent<TMP_Text>().text;
         playerData.SaveGame();
-        //SceneManager.LoadScene(1);   
+        SceneManager.LoadScene(1);   
     }
 
     public void LoadName()
     {
         playerData.LoadData();
+        inputField.GetComponent<TMP_Text>().text = playerData.playerNickname;
+        
     }
 }

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Earth
   - TextBox
+  - IsPlaced
   layers:
   - Default
   - TransparentFX
