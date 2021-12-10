@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class RaycastTest : MonoBehaviour
 {
-    [SerializeField] private Image newCursor;
+    [SerializeField] public GameObject cursorImage;
 
     private void Update()
     {
@@ -24,17 +24,7 @@ public class RaycastTest : MonoBehaviour
             //                                               hit.collider.gameObject.transform.position.z);
 
             Debug.Log(hit.collider);
-
-
-            if (newCursor.transform.position == hit.collider.transform.position)
-            {
-                return;
-            }
-            else if (newCursor.transform.position != hit.collider.transform.position)
-            {
-                newCursor.transform.position = hit.collider.transform.position;
-            }
-            
+                                    
         }        
-    }
+    }   
 }

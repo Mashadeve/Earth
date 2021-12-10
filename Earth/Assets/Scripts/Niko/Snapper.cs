@@ -35,6 +35,8 @@ public class Snapper : MonoBehaviour
     {
         target.transform.position = targetAnchor.transform.position;
 
+        target.transform.SetParent(targetAnchor.gameObject.transform);
+
         Destroy(target.GetComponent<Move3D>());
 
         Debug.Log("OSUU");  

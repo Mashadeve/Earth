@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class SunRotate : RotateScript
 {
+    public List<GameObject> orbit = new List<GameObject>();
+
+    
+
     private void Update()
     {
         RotatePlanet();
     }
+
     public override void RotatePlanet()
     {
         transform.Rotate(new Vector3(0, rotationSpeed, 0) * Time.deltaTime);

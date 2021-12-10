@@ -1,14 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Move3D : MonoBehaviour
 {
     private Camera mainCamera;
     private float cameraZDistance;
-
-    private CursorController newCursor;
-
 
     private GameObject currentObject, sun, sunAnchor;
 
@@ -20,9 +18,7 @@ public class Move3D : MonoBehaviour
     private void Start()
     {
         mainCamera = Camera.main;
-        cameraZDistance = mainCamera.WorldToScreenPoint(transform.position).z;
-
-        newCursor = FindObjectOfType<CursorController>();
+        cameraZDistance = mainCamera.WorldToScreenPoint(transform.position).z;       
     }
 
     private void Update()
@@ -37,10 +33,8 @@ public class Move3D : MonoBehaviour
 
         transform.position = new Vector3(newWorldPosition.x, newWorldPosition.y, gameObject.transform.position.z);
 
-
-        //Cursor.visible = false;
+        Cursor.visible = false;
     }
-
     private void OnMouseUp()
     {
         Cursor.visible = true;
