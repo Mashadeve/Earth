@@ -67,6 +67,7 @@ public class SnapPoints : MonoBehaviour
                     }
                     originalPart[i].SetActive(false);
                     canSnap = false;
+                    CanDrag.onDrag = false;
                 }
             }
         }
