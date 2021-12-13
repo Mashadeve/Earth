@@ -8,22 +8,10 @@ public class Move3D : MonoBehaviour
     private Camera mainCamera;
     private float cameraZDistance;
 
-    private GameObject currentObject, sun, sunAnchor;
-
-    private bool mouseOver;
-    private bool canMovePieces;
-
-    
-
     private void Start()
     {
         mainCamera = Camera.main;
         cameraZDistance = mainCamera.WorldToScreenPoint(transform.position).z;       
-    }
-
-    private void Update()
-    {
-        
     }
 
     private void OnMouseDrag()
@@ -35,6 +23,7 @@ public class Move3D : MonoBehaviour
 
         Cursor.visible = false;
     }
+
     private void OnMouseUp()
     {
         Cursor.visible = true;
