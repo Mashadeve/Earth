@@ -11,5 +11,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SamunScene.unity
     guid: b7cc4925c5c70a04e898da78be153707
+  - enabled: 1
+    path: Assets/Scenes/GameSelection.unity
+    guid: c4d4fbd3e25e9c04fb70fca55a107376
+  - enabled: 1
+    path: Assets/Scenes/NikonScene.unity
+    guid: 477f18dfeb7cf194493382f8ee9c12ed
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 9f44256d71791e946b89b670cca05840, type: 2}
