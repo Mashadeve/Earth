@@ -12,22 +12,27 @@ public class PartRaycast : MonoBehaviour
     }
     private void OnMouseDrag()
     {
-        if (!CanDrag.canDrag) return;
-        CanDrag.onDrag = true;
+        MoveObject();
+        CursorScript.onDrag = true;
+        Cursor.visible = false;
+        //if (!CanDrag.canDrag) return;
+        //CanDrag.onDrag = true;
 
     }
 
     private void OnMouseUp()
     {
-        CanDrag.onDrag = false;
+
+        Cursor.visible = true;
+        CursorScript.onDrag = false;
     }
 
     private void Update()
     {
-        if (CanDrag.onDrag)
-        {
-            MoveObject();
-        }
+        //if (CanDrag.onDrag)
+        //{
+        //    MoveObject();
+        //}
         
         //Vector3 screenPosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, cameraZDistance);
         //Vector3 newWorldPosition = mainCamera.ScreenToWorldPoint(screenPosition);
@@ -44,24 +49,10 @@ public class PartRaycast : MonoBehaviour
         Vector3 screenPosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, cameraZDistance);
         Vector3 newWorldPosition = mainCamera.ScreenToWorldPoint(screenPosition);
 
-        transform.position = new Vector3(newWorldPosition.x + 5f, newWorldPosition.y - 10f, gameObject.transform.position.z);
+        transform.position = new Vector3(newWorldPosition.x, newWorldPosition.y, gameObject.transform.position.z);
+
+        //RayCastHit();
 
     }
-
-    //private void OnDrawGizmos()
-    //{
-    //    float maxDistance = 5f;
-
-    //    RaycastHit hit;
-
-    //    bool isHit = Physics.BoxCast(transform.position, transform.lossyScale / 2, transform.forward ,out hit, transform.rotation, maxDistance);
-    //    if (isHit)
-    //    {
-    //        Gizmos.color = Color.red;
-    //        Gizmos.DrawRay(transform.position, transform.forward * hit.distance);
-    //        Gizmos.DrawWireCube(transform.position + transform.forward * hit.distance, transform.lossyScale);
-    //    }
-
-    //}
 }
 

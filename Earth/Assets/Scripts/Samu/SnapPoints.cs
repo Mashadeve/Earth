@@ -6,7 +6,7 @@ using System.Linq;
 public class SnapPoints : MonoBehaviour
 {
     [SerializeField] private List<GameObject> copyParts = new List<GameObject>();
-    [SerializeField] private List<GameObject> originalPart = new List<GameObject>();
+    public List<GameObject> originalPart = new List<GameObject>();
     [SerializeField] private GameObject coreQuat;
     private CoreAngle coreAngle;
     private bool canSnap;
@@ -67,7 +67,8 @@ public class SnapPoints : MonoBehaviour
                     }
                     originalPart[i].SetActive(false);
                     canSnap = false;
-                    CanDrag.onDrag = false;
+                    CursorScript.onDrag = false;
+                    Cursor.visible = true;
                 }
             }
         }
