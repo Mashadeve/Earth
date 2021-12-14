@@ -2,16 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TriggerText : TextBoxManager
+public class TriggerText : MonoBehaviour
 {
+    private TextBoxManager textBoxManager;
+
+    private void Start()
+    {
+        textBoxManager = FindObjectOfType<TextBoxManager>();
+    }
 
     private void OnMouseEnter()
     {
-        StartCoroutine(TypeHeader());
+        StartCoroutine(textBoxManager.TypeHeader());
     }
 
     private void OnMouseExit()
     {
-        StopCoroutine(TypeHeader());
+        textBoxManager.NextHeader();
     }
 }

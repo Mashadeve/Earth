@@ -14,6 +14,18 @@ public class TextBoxManager : MonoBehaviour
     public float typingSpeed;
 
 
+    private void Start()
+    {
+        index = FindObjectOfType<PlanetIndex>().index;
+    }
+
+    private void Update()
+    {
+        // vertaillaan raycast tulosta tässä textboxmanagerin indexiin.
+        // about näin 
+        // index = RaycastTest.hit.Gameobject.GetComponent<PlanetIndex>().index;
+    }
+
     public IEnumerator TypeHeader()
     {
         foreach(char letter in planetNameList[index].ToCharArray())
@@ -24,12 +36,11 @@ public class TextBoxManager : MonoBehaviour
     }
 
     public void NextHeader()
-    {       
-        if ( index < planetNameList.Count)
-        {
+    {
+        if (index < planetNameList.Count)
+        {           
             index++;
-            nameDisplay.text = "";
-            StartCoroutine(TypeHeader());
+            nameDisplay.text = "";           
         }
         else
         {
@@ -39,22 +50,19 @@ public class TextBoxManager : MonoBehaviour
 
     public IEnumerator TypeInfo()
     {
-        foreach(char letter in planetInfoList[index].ToCharArray())
+        foreach (char letter in planetInfoList[index].ToCharArray())
         {
             infoDisplay.text += letter;
             yield return new WaitForSeconds(typingSpeed);
-        }       
+        }
     }
 
     public void NextInfo()
     {
-        //StartCoroutine(TypeInfo());
-
         if (index < planetInfoList.Count)
         {
             index++;
             infoDisplay.text = "";
-            StartCoroutine(TypeInfo());
         }
         else
         {

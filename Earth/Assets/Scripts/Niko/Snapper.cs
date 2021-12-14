@@ -54,7 +54,5 @@ public class Snapper : MonoBehaviour
         {
             target.transform.position = targetAnchor.transform.position;
         }
-      
-        Debug.Log("OSUU");  
     }
 }
