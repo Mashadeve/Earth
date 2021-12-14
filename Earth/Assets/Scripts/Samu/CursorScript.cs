@@ -8,8 +8,6 @@ public class CursorScript : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log("OnDrag status " + onDrag);
-
         if (!onDrag)
         {
             Cursor.visible = true;

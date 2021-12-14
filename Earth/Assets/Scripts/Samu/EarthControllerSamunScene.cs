@@ -4,26 +4,13 @@ using UnityEngine;
 
 public class EarthControllerSamunScene : MonoBehaviour
 {
-    //[SerializeField] private ReadInput mouseOverSphere;
-
     public Rigidbody rb;
     [SerializeField] private float rotationSpeed = 1500f;
     [SerializeField] private float multiplier;
     private float horizontalInput;
 
-    private void Awake()
-    {
-        
-    }
-
-    private void OnMouseDrag()
-    {
-        
-    }
-
     private void OnMouseUp()
     {
-        
         horizontalInput = 0;
     }
 
