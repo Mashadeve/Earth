@@ -7,6 +7,15 @@ TagManager:
   - Earth
   - TextBox
   - IsPlaced
+  - Planet
+  - Mercury
+  - Venus
+  - Mars
+  - Jupiter
+  - Saturn
+  - Uranus
+  - Neptune
+  - Pluto
   layers:
   - Default
   - TransparentFX

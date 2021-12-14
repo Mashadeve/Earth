@@ -5,7 +5,7 @@ using UnityEngine;
 public class Snapper : MonoBehaviour
 {
     public GameObject target, targetAnchor;
-
+    
     private void OnMouseDown()
     {        
 
@@ -13,7 +13,8 @@ public class Snapper : MonoBehaviour
         {
             if (target.GetComponent<Move3D>() == null)
             {
-                target.AddComponent<Move3D>();
+                //target.AddComponent<Move3D>();
+
             }
         }
         else if (target.transform.position != targetAnchor.transform.position)
@@ -23,22 +24,37 @@ public class Snapper : MonoBehaviour
 
     }
 
+    private void OnMouseDrag()
+    {
+        Cursor.visible = false;
+    }
+
     private void OnMouseUp()
     {
         if (target.GetComponent<Move3D>() == null)
         {
-            target.AddComponent<Move3D>();
+            //target.AddComponent<Move3D>();
         }
+
+        Cursor.visible = true;
     }
 
     private void OnTriggerEnter(Collider targetAnchor)
-    {
-        target.transform.position = targetAnchor.transform.position;
+    {       
+        if (target.CompareTag(targetAnchor.tag))
+        {
+            target.transform.position = targetAnchor.transform.position;
 
-        target.transform.SetParent(targetAnchor.gameObject.transform);
+            target.transform.SetParent(targetAnchor.gameObject.transform);
 
-        Destroy(target.GetComponent<Move3D>());
-
+            targetAnchor.GetComponentInParent<SunRotate>().enabled = true;
+            Destroy(target.GetComponent<Move3D>());
+        }
+        else
+        {
+            target.transform.position = targetAnchor.transform.position;
+        }
+      
         Debug.Log("OSUU");  
     }
 }

@@ -1,35 +1,65 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
+using TMPro;
 
 public class TextBoxManager : MonoBehaviour
 {
-    public GameObject textBox;
+    public TextMeshProUGUI nameDisplay;
+    public TextMeshProUGUI infoDisplay;
+    public List<string> planetNameList = new List<string>();
+    public List<string> planetInfoList = new List<string>();
+    private int index;
+    public float typingSpeed;
 
 
-    private void Awake()
+    public IEnumerator TypeHeader()
     {
-        textBox.SetActive(false);
-    }
-
-    private void Update()
-    {
-        textBox.transform.localRotation = new Quaternion(0, 0, 0, 0);
-    }
-
-    private void OnMouseOver()
-    {
-        if (textBox == null)
+        foreach(char letter in planetNameList[index].ToCharArray())
         {
-            return;
+            nameDisplay.text += letter;
+            yield return new WaitForSeconds(typingSpeed);
         }
-
-        textBox.gameObject.SetActive(true);
     }
 
-    private void OnMouseExit()
+    public void NextHeader()
+    {       
+        if ( index < planetNameList.Count)
+        {
+            index++;
+            nameDisplay.text = "";
+            StartCoroutine(TypeHeader());
+        }
+        else
+        {
+            nameDisplay.text = "";
+        }
+    }
+
+    public IEnumerator TypeInfo()
     {
-        textBox.gameObject.SetActive(false);
+        foreach(char letter in planetInfoList[index].ToCharArray())
+        {
+            infoDisplay.text += letter;
+            yield return new WaitForSeconds(typingSpeed);
+        }       
     }
+
+    public void NextInfo()
+    {
+        //StartCoroutine(TypeInfo());
+
+        if (index < planetInfoList.Count)
+        {
+            index++;
+            infoDisplay.text = "";
+            StartCoroutine(TypeInfo());
+        }
+        else
+        {
+            infoDisplay.text = "";
+        }
+    }
+
 }

@@ -20,13 +20,6 @@ public class Move3D : MonoBehaviour
         Vector3 newWorldPosition = mainCamera.ScreenToWorldPoint(screenPosition);
 
         transform.position = new Vector3(newWorldPosition.x, newWorldPosition.y, gameObject.transform.position.z);
-
-        Cursor.visible = false;
-    }
-
-    private void OnMouseUp()
-    {
-        Cursor.visible = true;
     }
 
 }
