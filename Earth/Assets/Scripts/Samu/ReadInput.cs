@@ -16,15 +16,11 @@ public class ReadInput : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hitData;
 
-
         Physics.Raycast(ray, out hitData, 200f);
 
-        //Debug.DrawRay(ray.origin, ray.direction, Color.red, 50f);
-        
         canDrag = false;
         
         if (hitData.collider == null) return;
         canDrag = true;
-
     }
 }

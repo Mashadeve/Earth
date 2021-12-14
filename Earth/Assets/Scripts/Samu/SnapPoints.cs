@@ -6,57 +6,45 @@ using System.Linq;
 public class SnapPoints : MonoBehaviour
 {
     [SerializeField] private List<GameObject> copyParts = new List<GameObject>();
-    [SerializeField] private List<GameObject> originalPart = new List<GameObject>();
     [SerializeField] private GameObject coreQuat;
+
+    public List<GameObject> originalPart = new List<GameObject>();
+    
     private CoreAngle coreAngle;
+
     private bool canSnap;
     private int objectsIsPlaced;
 
 
     private void Start()
     {
-        //Enumerable.Range(-45, 10);
-
         for (int i = 0; i < originalPart.Count; i++)
         {
-            var copy = Instantiate(originalPart[i]); //, new Vector3(originalPart[i].transform.position.x, originalPart[i].transform.position.y, originalPart[i].transform.position.z), Quaternion.identity);
+            var copy = Instantiate(originalPart[i]);
             Destroy(copy.GetComponent<PartRaycast>());
             Destroy(copy.GetComponent<Collider>());
             copy.SetActive(false);
             copyParts.Add(copy);
-
         }
 
         for (int i = 0; i < originalPart.Count; i++)
         {
             originalPart[i].transform.position = new Vector3(-41 + i * 15, 20);
         }
-
-
         coreAngle = coreQuat.GetComponent<CoreAngle>();
-
     }
 
 
     private void Update()
     {
-        if (objectsIsPlaced == copyParts.Count)
-        {
-            Debug.Log("Läpäisit pelin");
-        }
-
         for (int i = 0; i < originalPart.Count; i++)
         {
             Vector3 pos = originalPart[i].transform.position;
-            //Debug.Log("Angle " + CalcAngle(coreQuat, originalPart[i]));
+
             if (pos.x - copyParts[i].transform.position.x < 0.5f && pos.y - copyParts[i].transform.position.y < 0.5f && pos.x - copyParts[i].transform.position.x > -0.5f && pos.y - copyParts[i].transform.position.y > -0.5f)
             {
-
-                //if (originalPart[i].GetComponent<CoreAngle>().angle == coreAngle.angle)
                 if (CalcAngle(coreQuat, originalPart[i]))
                 {
-                    //var offset = copyParts[i].transform.position;
-                    //originalPart[i].transform.position = copyParts[i].transform.position;
                     copyParts[i].SetActive(true);
                     copyParts[i].transform.SetParent(GameObject.Find("Core").transform);
                     copyParts[i].transform.rotation = GameObject.Find("Core").transform.rotation;
@@ -67,6 +55,8 @@ public class SnapPoints : MonoBehaviour
                     }
                     originalPart[i].SetActive(false);
                     canSnap = false;
+                    CursorScript.onDrag = false;
+                    Cursor.visible = true;
                 }
             }
         }
@@ -78,7 +68,6 @@ public class SnapPoints : MonoBehaviour
         var targetQuat = target.transform.rotation;
         float angleX = Quaternion.Angle(coreQuat, targetQuat);
         float angleY = Quaternion.Angle(coreQuat, targetQuat);
-        //float angle = Quaternion.Angle(transform.rotation, target.rotation);
         if (angleX < 10 && angleY < 10)
         {
             canSnap = true;
@@ -92,22 +81,6 @@ public class SnapPoints : MonoBehaviour
         objectsIsPlaced++;
     }
 }
-    //private void LateUpdate()
-    //{
-
-
-    //            //Destroy(originalPart[i]);
-
-    //            //var part = Instantiate(originalPart[i], new Vector3(copyParts[i].transform.position.x, copyParts[i].transform.position.y, originalPart[i].transform.position.z), Quaternion.identity);
-    //            //Destroy(part.GetComponent<PartRaycast>());
-    //            //part.transform.SetParent(GameObject.Find("Core").transform);
-    //            //Destroy(part.GetComponent<Collider>());
-    //            //Destroy(originalPart[i]);
-    //            //originalPart.Remove(originalPart[i]);
-    //            //snapPoints[i].transform.position = snapPointsCurrent[i];
-    //            //Destroy(snapPoints[i].GetComponent<Collider>());
-    //            //snapPoints[i].transform.SetParent(GameObject.Find("Core").transform);
-    //            //snapPoints.Remove(snapPoints[i]);
 
             
         
