@@ -27,12 +27,16 @@ public class TextBoxManager : MonoBehaviour
 
             foreach (char letter in planetNameList[index].ToCharArray())
             {
-                nameDisplay.text += letter;
-
-                if (nameDisplay.text == planetNameList[index])
+                
+                if (nameDisplay.text != planetNameList[index])
+                {
+                    nameDisplay.text += letter;                   
+                }
+                else
                 {
                     break;
                 }
+                
             }
 
             Debug.Log("index " + index);
