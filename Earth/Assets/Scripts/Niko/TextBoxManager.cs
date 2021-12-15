@@ -13,61 +13,76 @@ public class TextBoxManager : MonoBehaviour
     private int index;
     public float typingSpeed;
 
-
-    private void Start()
-    {
-        index = FindObjectOfType<PlanetIndex>().index;
-    }
-
     private void Update()
     {
-        // vertaillaan raycast tulosta tässä textboxmanagerin indexiin.
-        // about näin 
-        // index = RaycastTest.hit.Gameobject.GetComponent<PlanetIndex>().index;
-    }
-
-    public IEnumerator TypeHeader()
-    {
-        foreach(char letter in planetNameList[index].ToCharArray())
+        if (RaycastTest.hitTarget == null)
         {
-            nameDisplay.text += letter;
-            yield return new WaitForSeconds(typingSpeed);
-        }
-    }
-
-    public void NextHeader()
-    {
-        if (index < planetNameList.Count)
-        {           
-            index++;
-            nameDisplay.text = "";           
+            return;
         }
         else
         {
-            nameDisplay.text = "";
-        }
+            index = RaycastTest.hitTarget.GetComponent<PlanetIndex>().index;
+            nameDisplay.text = planetNameList[index];
+            infoDisplay.text = planetInfoList[index];
+
+            foreach (char letter in planetNameList[index].ToCharArray())
+            {
+                nameDisplay.text += letter;
+
+                if (nameDisplay.text == planetNameList[index])
+                {
+                    break;
+                }
+            }
+
+            Debug.Log("index " + index);
+        }      
     }
 
-    public IEnumerator TypeInfo()
-    {
-        foreach (char letter in planetInfoList[index].ToCharArray())
-        {
-            infoDisplay.text += letter;
-            yield return new WaitForSeconds(typingSpeed);
-        }
-    }
+    //public void StringToChar()
+    //{
+        
+    //}
 
-    public void NextInfo()
-    {
-        if (index < planetInfoList.Count)
-        {
-            index++;
-            infoDisplay.text = "";
-        }
-        else
-        {
-            infoDisplay.text = "";
-        }
-    }
+    //public IEnumerator TypeHeader()
+    //{
+
+    
+    //}
+
+    //public void NextHeader()
+    //{
+    //    if (index < planetNameList.Count)
+    //    {           
+    //        //index++;
+    //        nameDisplay.text = "";           
+    //    }
+    //    else
+    //    {
+    //        nameDisplay.text = "";
+    //    }
+    //}
+
+    //public IEnumerator TypeInfo()
+    //{
+    //    foreach (char letter in planetInfoList[index].ToCharArray())
+    //    {
+    //        infoDisplay.text += letter;
+    //        yield return new WaitForSeconds(typingSpeed);
+    //    }
+    //}
+
+    //public void NextInfo()
+    //{
+    //    if (index < planetInfoList.Count)
+    //    {
+    //        index++;
+    //        infoDisplay.text = "";
+    //    }
+    //    else
+    //    {
+    //        infoDisplay.text = "";
+    //    }
+    //}
 
 }

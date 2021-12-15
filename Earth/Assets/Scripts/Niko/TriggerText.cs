@@ -11,13 +11,13 @@ public class TriggerText : MonoBehaviour
         textBoxManager = FindObjectOfType<TextBoxManager>();
     }
 
-    private void OnMouseEnter()
-    {
-        StartCoroutine(textBoxManager.TypeHeader());
-    }
+    //private void OnMouseEnter()
+    //{
+    //    StartCoroutine(textBoxManager.TypeHeader());
+    //}
 
-    private void OnMouseExit()
-    {
-        textBoxManager.NextHeader();
-    }
+    //private void OnMouseExit()
+    //{
+    //    textBoxManager.NextHeader();
+    //}
 }

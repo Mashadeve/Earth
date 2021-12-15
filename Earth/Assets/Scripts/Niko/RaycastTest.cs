@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class RaycastTest : MonoBehaviour
 {
-    
+    public static GameObject hitTarget;
+  
     private void Update()
     {
         Vector3 mousePos = Input.mousePosition;
@@ -13,11 +14,10 @@ public class RaycastTest : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(mousePos);
         RaycastHit hit;
 
-        if (Physics.Raycast(ray, out hit, 500f))
-        {    
-            // Tässä objektissa on yksilötieto ja tästä meidän pitää hakea planeIndex scripti
-            // tätä käytetään TextBoxManagerin indexin vertailuun
-            Debug.Log(hit.collider.name);                                  
-        }        
+        if (Physics.Raycast(ray, out hit, 1000f))
+        {
+            hitTarget = hit.collider.gameObject;
+            Debug.Log(hit.collider.name);
+        }
     }   
 }

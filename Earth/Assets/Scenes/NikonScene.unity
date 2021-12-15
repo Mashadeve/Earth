@@ -3422,8 +3422,8 @@ MonoBehaviour:
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit
   m_CancelButton: Cancel
-  m_InputActionsPerSecond: 10
-  m_RepeatDelay: 0.5
+  m_InputActionsPerSecond: 0.5
+  m_RepeatDelay: 3
   m_ForceModuleActive: 0
 --- !u!114 &1725280154
 MonoBehaviour:
@@ -4011,7 +4011,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 25.400024, y: -144.7}
+  m_AnchoredPosition: {x: 5.5, y: -144.3}
   m_SizeDelta: {x: -433.8257, y: -244.0269}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2141607718
