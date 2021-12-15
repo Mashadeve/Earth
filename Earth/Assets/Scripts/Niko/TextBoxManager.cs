@@ -27,16 +27,19 @@ public class TextBoxManager : MonoBehaviour
 
             foreach (char letter in planetNameList[index].ToCharArray())
             {
-                
-                if (nameDisplay.text != planetNameList[index])
+                var typeTime = Time.deltaTime;
+
+
+
+                if (nameDisplay.text != planetNameList[index] && typeTime > 2f)
                 {
-                    nameDisplay.text += letter;                   
+                    nameDisplay.text += letter;
+                    typeTime = 0;
                 }
                 else
                 {
                     break;
-                }
-                
+                }               
             }
 
             Debug.Log("index " + index);
