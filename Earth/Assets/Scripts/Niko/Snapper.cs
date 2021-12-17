@@ -4,8 +4,14 @@ using UnityEngine;
 
 public class Snapper : MonoBehaviour
 {
-    public GameObject target, targetAnchor;
-    
+    public GameObject target, targetAnchor, trail;
+
+
+    private void Start()
+    {
+        trail.SetActive(false);
+    }
+
     private void OnMouseDown()
     {        
 
@@ -48,6 +54,9 @@ public class Snapper : MonoBehaviour
             target.transform.SetParent(targetAnchor.gameObject.transform);
 
             targetAnchor.GetComponentInParent<SunRotate>().enabled = true;
+
+            trail.SetActive(true);
+
             Destroy(target.GetComponent<Move3D>());
         }
         else

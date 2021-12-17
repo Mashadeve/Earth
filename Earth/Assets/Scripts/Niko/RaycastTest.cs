@@ -14,7 +14,7 @@ public class RaycastTest : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(mousePos);
         RaycastHit hit;
 
-        if (Physics.Raycast(ray, out hit, 1000f))
+        if (Physics.Raycast(ray, out hit, 3000f))
         {
             hitTarget = hit.collider.gameObject;
             Debug.Log(hit.collider.name);
