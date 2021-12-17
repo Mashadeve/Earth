@@ -7,13 +7,21 @@ public class SnapPoints : MonoBehaviour
 {
     [SerializeField] private List<GameObject> copyParts = new List<GameObject>();
     [SerializeField] private GameObject coreQuat;
+    [SerializeField] private GameObject missionPast;
 
     public List<GameObject> originalPart = new List<GameObject>();
     
     private CoreAngle coreAngle;
+    private GameObject coreTransform;
 
     private bool canSnap;
     private int objectsIsPlaced;
+    private float snapRange = 1f, snapAngle = 20f;
+
+    private void Awake()
+    {
+        coreTransform = GameObject.Find("Core");
+    }
 
 
     private void Start()
@@ -37,18 +45,36 @@ public class SnapPoints : MonoBehaviour
 
     private void Update()
     {
+        if (objectsIsPlaced == originalPart.Count)
+        {
+            if (missionPast != missionPast.activeInHierarchy)
+            {
+                missionPast.SetActive(true);
+            }
+            else
+            {
+                return;
+            }
+            
+        }
+
+
         for (int i = 0; i < originalPart.Count; i++)
         {
             Vector3 pos = originalPart[i].transform.position;
 
-            if (pos.x - copyParts[i].transform.position.x < 0.5f && pos.y - copyParts[i].transform.position.y < 0.5f && pos.x - copyParts[i].transform.position.x > -0.5f && pos.y - copyParts[i].transform.position.y > -0.5f)
+            if (pos.x - copyParts[i].transform.position.x < snapRange && pos.y - copyParts[i].transform.position.y < snapRange &&
+                pos.x - copyParts[i].transform.position.x > -snapRange && pos.y - copyParts[i].transform.position.y > -snapRange)
             {
                 if (CalcAngle(coreQuat, originalPart[i]))
                 {
                     copyParts[i].SetActive(true);
-                    copyParts[i].transform.SetParent(GameObject.Find("Core").transform);
-                    copyParts[i].transform.rotation = GameObject.Find("Core").transform.rotation;
-                    copyParts[i].transform.position = new Vector3(GameObject.Find("Core").transform.position.x, GameObject.Find("Core").transform.position.y);
+                    //copyParts[i].transform.SetParent(GameObject.Find("Core").transform);
+                    copyParts[i].transform.SetParent(coreTransform.transform);
+                    //copyParts[i].transform.rotation = GameObject.Find("Core").transform.rotation;
+                    copyParts[i].transform.rotation = coreTransform.transform.rotation;
+                    //copyParts[i].transform.position = new Vector3(GameObject.Find("Core").transform.position.x, GameObject.Find("Core").transform.position.y);
+                    copyParts[i].transform.position = new Vector3(coreTransform.transform.position.x, coreTransform.transform.position.y);
                     if (copyParts[i].tag != "IsPlaced")
                     {
                         TagTheObject(copyParts[i]);
@@ -68,7 +94,8 @@ public class SnapPoints : MonoBehaviour
         var targetQuat = target.transform.rotation;
         float angleX = Quaternion.Angle(coreQuat, targetQuat);
         float angleY = Quaternion.Angle(coreQuat, targetQuat);
-        if (angleX < 10 && angleY < 10)
+
+        if (angleX < snapAngle && angleY < snapAngle)
         {
             canSnap = true;
         }
