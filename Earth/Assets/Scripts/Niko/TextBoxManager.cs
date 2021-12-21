@@ -34,8 +34,6 @@ public class TextBoxManager : MonoBehaviour
             {
                 var typeTime = Time.deltaTime;
 
-
-
                 if (nameDisplay.text != planetNameList[index] && typeTime > 2f)
                 {
                     nameDisplay.text += letter;
