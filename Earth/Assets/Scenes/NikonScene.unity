@@ -3219,9 +3219,10 @@ GameObject:
   - component: {fileID: 1376199291}
   - component: {fileID: 1376199290}
   - component: {fileID: 1376199289}
+  - component: {fileID: 1376199294}
   m_Layer: 0
   m_Name: Moon
-  m_TagString: Untagged
+  m_TagString: Moon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3315,6 +3316,19 @@ Transform:
   m_Father: {fileID: 1679544592}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1376199294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1376199288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4ab6a0fb9e011d42ab8997d9ca8cdee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  index: 10
 --- !u!1 &1436140862
 GameObject:
   m_ObjectHideFlags: 0
@@ -4718,6 +4732,7 @@ MonoBehaviour:
   - Uranus
   - Neptune
   - Pluto
+  - Moon
   planetInfoList:
   - The sun is a star and it is so big that you could fit over 1 million Earth's
     inside it
@@ -4734,6 +4749,8 @@ MonoBehaviour:
     System
   - One year on Neptune is equal to 165 Earth years
   - Pluto is categorized as dwarf planet because it is so small
+  - Moons surface is actually dark and what makes it glow is Sun's light reflecting
+    from its surface
   typingSpeed: 0.2
 --- !u!4 &1754511471
 Transform:

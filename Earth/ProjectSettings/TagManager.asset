@@ -17,6 +17,7 @@ TagManager:
   - Neptune
   - Pluto
   - Anchor
+  - Moon
   layers:
   - Default
   - TransparentFX
