@@ -15,6 +15,9 @@ public class PartRaycast : MonoBehaviour
         MoveObject();
         CursorScript.onDrag = true;
         Cursor.visible = false;
+
+        
+
     }
 
     private void OnMouseUp()
