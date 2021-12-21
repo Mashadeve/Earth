@@ -16,8 +16,17 @@ public class RaycastTest : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit, 3000f))
         {
+            if (hit.collider.name == "Anchor")
+            {
+                Debug.Log("Toteutuu");
+                return;               
+            }
+
             hitTarget = hit.collider.gameObject;
             Debug.Log(hit.collider.name);
         }
+
+        
+
     }   
 }

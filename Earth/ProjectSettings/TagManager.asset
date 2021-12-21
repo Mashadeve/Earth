@@ -16,6 +16,7 @@ TagManager:
   - Uranus
   - Neptune
   - Pluto
+  - Anchor
   layers:
   - Default
   - TransparentFX

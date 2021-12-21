@@ -15,11 +15,16 @@ public class TextBoxManager : MonoBehaviour
 
     private void Update()
     {
+
         if (RaycastTest.hitTarget == null)
         {
             return;
         }
-        else
+        TextBox();
+    }
+
+    public void TextBox()
+    {
         {
             index = RaycastTest.hitTarget.GetComponent<PlanetIndex>().index;
             nameDisplay.text = planetNameList[index];
@@ -39,11 +44,11 @@ public class TextBoxManager : MonoBehaviour
                 else
                 {
                     break;
-                }               
+                }
             }
 
             Debug.Log("index " + index);
-        }      
+        }
     }
 
     //public void StringToChar()
