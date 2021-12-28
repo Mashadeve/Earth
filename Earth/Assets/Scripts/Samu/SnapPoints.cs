@@ -14,7 +14,7 @@ public class SnapPoints : MonoBehaviour
     private CoreAngle coreAngle;
     private GameObject coreTransform;
 
-    private bool canSnap;
+    public static bool canSnap;
     private int objectsIsPlaced;
     private float snapRange = 1f, snapAngle = 20f;
 
@@ -45,6 +45,8 @@ public class SnapPoints : MonoBehaviour
 
     private void Update()
     {
+        
+
         if (objectsIsPlaced == originalPart.Count)
         {
             if (missionPast != missionPast.activeInHierarchy)
@@ -65,6 +67,7 @@ public class SnapPoints : MonoBehaviour
         for (int i = 0; i < originalPart.Count; i++)
         {
             Vector3 pos = originalPart[i].transform.position;
+            CalcAngle(coreQuat, originalPart[i]);
 
             if (pos.x - copyParts[i].transform.position.x < snapRange && pos.y - copyParts[i].transform.position.y < snapRange &&
                 pos.x - copyParts[i].transform.position.x > -snapRange && pos.y - copyParts[i].transform.position.y > -snapRange)
@@ -72,11 +75,9 @@ public class SnapPoints : MonoBehaviour
                 if (CalcAngle(coreQuat, originalPart[i]))
                 {
                     copyParts[i].SetActive(true);
-                    //copyParts[i].transform.SetParent(GameObject.Find("Core").transform);
                     copyParts[i].transform.SetParent(coreTransform.transform);
-                    //copyParts[i].transform.rotation = GameObject.Find("Core").transform.rotation;
                     copyParts[i].transform.rotation = coreTransform.transform.rotation;
-                    //copyParts[i].transform.position = new Vector3(GameObject.Find("Core").transform.position.x, GameObject.Find("Core").transform.position.y);
+    
                     copyParts[i].transform.position = new Vector3(coreTransform.transform.position.x, coreTransform.transform.position.y);
                     if (copyParts[i].tag != "IsPlaced")
                     {
@@ -98,11 +99,19 @@ public class SnapPoints : MonoBehaviour
         float angleX = Quaternion.Angle(coreQuat, targetQuat);
         float angleY = Quaternion.Angle(coreQuat, targetQuat);
 
+        Debug.Log("AngleX " + (angleX < snapAngle));
+
         if (angleX < snapAngle && angleY < snapAngle)
         {
             canSnap = true;
+            return true;
         }
-        return canSnap;
+        else
+        {
+            canSnap = false;
+            return false;
+        }
+        
     }
 
     private void TagTheObject(GameObject obj)

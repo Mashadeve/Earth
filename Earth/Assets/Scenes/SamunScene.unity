@@ -1428,6 +1428,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Earth_10
       objectReference: {fileID: 0}
+    - target: {fileID: 3488662842618962849, guid: 348eacf73bb66634d86f2d7ab0ca2353, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4138ad2d557bb6948b95a199ad559705, type: 2}
+    - target: {fileID: 7770553010602545307, guid: 348eacf73bb66634d86f2d7ab0ca2353, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4138ad2d557bb6948b95a199ad559705, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 348eacf73bb66634d86f2d7ab0ca2353, type: 3}
 --- !u!1 &536231240814374031
@@ -1541,6 +1549,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Europe_fix
       objectReference: {fileID: 0}
+    - target: {fileID: 7298419585927183108, guid: c050be30e13b22f4182cc494f3d38ec5, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4138ad2d557bb6948b95a199ad559705, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c050be30e13b22f4182cc494f3d38ec5, type: 3}
 --- !u!1 &1106758176987231157
@@ -1630,6 +1642,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5406688267961435636, guid: cf2a7f5ecccc8dd46a9acdf2332ec523, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4138ad2d557bb6948b95a199ad559705, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf2a7f5ecccc8dd46a9acdf2332ec523, type: 3}
 --- !u!23 &1831925325065839028
@@ -1836,6 +1852,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8744898350385424196, guid: 13a87bcd197c2634a9050a2405877034, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4138ad2d557bb6948b95a199ad559705, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13a87bcd197c2634a9050a2405877034, type: 3}
 --- !u!33 &3169995751180694082
@@ -2861,6 +2881,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1791852171923025809, guid: e89bea6b4950f5f4aa38e1e269479a5b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4138ad2d557bb6948b95a199ad559705, type: 2}
     - target: {fileID: 7579210982753386736, guid: e89bea6b4950f5f4aa38e1e269479a5b, type: 3}
       propertyPath: m_Name
       value: Africa_fix
@@ -2951,6 +2975,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4828138022491907100, guid: b929bc7669b4f1c4cb6a19cc76c4346b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4138ad2d557bb6948b95a199ad559705, type: 2}
     - target: {fileID: 7704736857461236949, guid: b929bc7669b4f1c4cb6a19cc76c4346b, type: 3}
       propertyPath: m_Name
       value: Australia_fix
@@ -3281,6 +3309,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 91583042873429038, guid: 243411ceffd37394b9912c8080215012, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4138ad2d557bb6948b95a199ad559705, type: 2}
     - target: {fileID: 8787702623365463024, guid: 243411ceffd37394b9912c8080215012, type: 3}
       propertyPath: m_Name
       value: South_America_fix
@@ -3338,6 +3370,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3227700203949347618, guid: 1213f564a2e6b404cb390e4f8e15e928, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4138ad2d557bb6948b95a199ad559705, type: 2}
     - target: {fileID: 8862730391114093159, guid: 1213f564a2e6b404cb390e4f8e15e928, type: 3}
       propertyPath: m_RootOrder
       value: 14

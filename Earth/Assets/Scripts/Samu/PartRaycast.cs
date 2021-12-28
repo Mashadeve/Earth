@@ -6,9 +6,13 @@ public class PartRaycast : MonoBehaviour
     private float cameraZDistance;
     private Vector3 startPos;
     private bool posIsSet;
+    private Color matColorDefault, currentColor;
+    private Material material;
 
     private void Start()
     {
+        material = GetComponentInChildren<MeshRenderer>().material;
+        matColorDefault = material.color;
         mainCamera = Camera.main;
         cameraZDistance = mainCamera.WorldToScreenPoint(transform.position).z;
     }
@@ -20,15 +24,24 @@ public class PartRaycast : MonoBehaviour
             startPos = transform.position;
             posIsSet = true;
         }
+
         CursorScript.onDrag = true;
         Cursor.visible = false;
         MoveP();
-        
-
+        Debug.Log(SnapPoints.canSnap);
+        //if (!SnapPoints.canSnap)
+        //{
+        //    material.color = Color.red;
+        //}
+        //else if (SnapPoints.canSnap)
+        //{
+        //    material.color = Color.green;
+        //}
     }
 
     private void OnMouseUp()
     {
+        material.color = matColorDefault;
         Cursor.visible = true;
         CursorScript.onDrag = false;
 
