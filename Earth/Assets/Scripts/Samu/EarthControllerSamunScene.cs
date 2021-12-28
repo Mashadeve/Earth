@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class EarthControllerSamunScene : MonoBehaviour
 {
-    public Rigidbody rb;
-    [SerializeField] private float rotationSpeed = 1500f;
-    [SerializeField] private float multiplier;
+    
+    [SerializeField] private float rotationSpeed = 50f;
+    [SerializeField] private float multiplier = 1f;
     private float horizontalInput;
 
     private void OnMouseUp()

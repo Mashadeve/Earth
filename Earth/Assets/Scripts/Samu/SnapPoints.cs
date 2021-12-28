@@ -50,6 +50,7 @@ public class SnapPoints : MonoBehaviour
             if (missionPast != missionPast.activeInHierarchy)
             {
                 missionPast.SetActive(true);
+                Destroy(coreQuat.GetComponent<EarthControllerSamunScene>());
                 coreQuat.AddComponent<SunRotate>();
                 coreQuat.GetComponent<SunRotate>().rotationSpeed = -20;
             }
