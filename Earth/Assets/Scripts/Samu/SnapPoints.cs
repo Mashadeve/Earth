@@ -14,7 +14,7 @@ public class SnapPoints : MonoBehaviour
     private CoreAngle coreAngle;
     private GameObject coreTransform;
 
-    public static bool canSnap;
+    //public static bool canSnap;
     private int objectsIsPlaced;
     private float snapRange = 1f, snapAngle = 20f;
 
@@ -33,19 +33,23 @@ public class SnapPoints : MonoBehaviour
             Destroy(copy.GetComponent<Collider>());
             copy.SetActive(false);
             copyParts.Add(copy);
+
+            
         }
 
         for (int i = 0; i < originalPart.Count; i++)
         {
             originalPart[i].transform.position = new Vector3(-41 + i * 15, 20);
         }
-        coreAngle = coreQuat.GetComponent<CoreAngle>();
+        //coreAngle = coreQuat.GetComponent<CoreAngle>();
     }
 
 
     private void Update()
     {
-        
+
+        //Debug.Log("copyPartsRot " + copyParts[6].gameObject.name + " = " + copyParts[6].transform.rotation);
+        //Debug.Log("coreRot " + coreTransform.transform.rotation);
 
         if (objectsIsPlaced == originalPart.Count)
         {
@@ -67,52 +71,52 @@ public class SnapPoints : MonoBehaviour
         for (int i = 0; i < originalPart.Count; i++)
         {
             Vector3 pos = originalPart[i].transform.position;
-            CalcAngle(coreQuat, originalPart[i]);
+            
+            
+            //CalcAngle(coreQuat, originalPart[i]);
 
             if (pos.x - copyParts[i].transform.position.x < snapRange && pos.y - copyParts[i].transform.position.y < snapRange &&
-                pos.x - copyParts[i].transform.position.x > -snapRange && pos.y - copyParts[i].transform.position.y > -snapRange)
+                pos.x - copyParts[i].transform.position.x > -snapRange && pos.y - copyParts[i].transform.position.y > -snapRange &&
+                CorrectAngle.canSnapNew)
             {
-                if (CalcAngle(coreQuat, originalPart[i]))
+                copyParts[i].SetActive(true);
+                copyParts[i].transform.SetParent(coreTransform.transform);
+                copyParts[i].transform.rotation = coreTransform.transform.rotation;
+
+                copyParts[i].transform.position = new Vector3(coreTransform.transform.position.x, coreTransform.transform.position.y);
+                if (copyParts[i].tag != "IsPlaced")
                 {
-                    copyParts[i].SetActive(true);
-                    copyParts[i].transform.SetParent(coreTransform.transform);
-                    copyParts[i].transform.rotation = coreTransform.transform.rotation;
-    
-                    copyParts[i].transform.position = new Vector3(coreTransform.transform.position.x, coreTransform.transform.position.y);
-                    if (copyParts[i].tag != "IsPlaced")
-                    {
-                        TagTheObject(copyParts[i]);
-                    }
-                    originalPart[i].SetActive(false);
-                    canSnap = false;
-                    CursorScript.onDrag = false;
-                    Cursor.visible = true;
+                    TagTheObject(copyParts[i]);
                 }
+                originalPart[i].SetActive(false);
+                //canSnap = false;
+                CursorScript.onDrag = false;
+                Cursor.visible = true;
             }
         }
     }
 
-    private bool CalcAngle(GameObject core, GameObject target)
-    {
-        var coreQuat = core.transform.rotation;
-        var targetQuat = target.transform.rotation;
-        float angleX = Quaternion.Angle(coreQuat, targetQuat);
-        float angleY = Quaternion.Angle(coreQuat, targetQuat);
+    //private bool CalcAngle(GameObject core, GameObject target)
+    //{
+    //    var coreQuat = core.transform.rotation;
+    //    var targetQuat = target.transform.rotation;
+    //    float angleX = Quaternion.Angle(coreQuat, targetQuat);
+    //    float angleY = Quaternion.Angle(coreQuat, targetQuat);
 
-        Debug.Log("AngleX " + (angleX < snapAngle));
+    //    Debug.Log("AngleX " + (angleX < snapAngle));
 
-        if (angleX < snapAngle && angleY < snapAngle)
-        {
-            canSnap = true;
-            return true;
-        }
-        else
-        {
-            canSnap = false;
-            return false;
-        }
+    //    if (angleX < snapAngle && angleY < snapAngle)
+    //    {
+    //        canSnap = true;
+    //        return true;
+    //    }
+    //    else
+    //    {
+    //        canSnap = false;
+    //        return false;
+    //    }
         
-    }
+    //}
 
     private void TagTheObject(GameObject obj)
     {

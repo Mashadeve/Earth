@@ -8,9 +8,12 @@ public class PartRaycast : MonoBehaviour
     private bool posIsSet;
     private Color matColorDefault, currentColor;
     private Material material;
+    private GameObject core;
 
     private void Start()
     {
+        core = GameObject.Find("Core");
+        
         material = GetComponentInChildren<MeshRenderer>().material;
         matColorDefault = material.color;
         mainCamera = Camera.main;
@@ -24,19 +27,20 @@ public class PartRaycast : MonoBehaviour
             startPos = transform.position;
             posIsSet = true;
         }
-
+        CorrectAngle.CalcAngle(core, this.gameObject);
         CursorScript.onDrag = true;
         Cursor.visible = false;
         MoveP();
-        Debug.Log(SnapPoints.canSnap);
-        //if (!SnapPoints.canSnap)
-        //{
-        //    material.color = Color.red;
-        //}
-        //else if (SnapPoints.canSnap)
-        //{
-        //    material.color = Color.green;
-        //}
+        
+
+        if (!CorrectAngle.canSnapNew)
+        {
+            material.color = Color.red;
+        }
+        else if (CorrectAngle.canSnapNew)
+        {
+            material.color = Color.green;
+        }
     }
 
     private void OnMouseUp()
