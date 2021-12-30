@@ -16,7 +16,7 @@ public class SnapPoints : MonoBehaviour
 
     //public static bool canSnap;
     private int objectsIsPlaced;
-    private float snapRange = 1f, snapAngle = 20f;
+    private float snapRange = 1f;
 
     private void Awake()
     {
@@ -87,11 +87,13 @@ public class SnapPoints : MonoBehaviour
                 if (copyParts[i].tag != "IsPlaced")
                 {
                     TagTheObject(copyParts[i]);
+                    CursorScript.ResetCursor();
                 }
+                copyParts[i].GetComponentInChildren<MeshRenderer>().material.color = PartRaycast.matColorDefault;
                 originalPart[i].SetActive(false);
                 //canSnap = false;
-                CursorScript.onDrag = false;
-                Cursor.visible = true;
+                //CursorScript.onDrag = false;
+                //Cursor.visible = true;
             }
         }
     }

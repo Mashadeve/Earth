@@ -2,15 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CursorScript : MonoBehaviour
+public static class CursorScript
 {
-    public static bool onDrag;
-
-    private void Update()
+    public static void CursorOff(PartRaycast currentScript)
     {
-        if (!onDrag)
-        {
-            Cursor.visible = true;
-        }
+        Cursor.visible = false;
+    }
+
+    public static void CursorOn(PartRaycast currentScrip)
+    {
+        Cursor.visible = true;
+    }
+
+    public static void ResetCursor()
+    {
+        Cursor.visible = true;
     }
 }
