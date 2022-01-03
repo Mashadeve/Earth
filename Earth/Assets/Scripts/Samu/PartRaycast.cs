@@ -9,6 +9,8 @@ public class PartRaycast : MonoBehaviour
     public static Color matColorDefault, currentColor;
     private Material material;
     private GameObject core;
+    //*******Mask********
+    private int defaultMask, highlightMask;
 
     private void Start()
     {
@@ -18,6 +20,10 @@ public class PartRaycast : MonoBehaviour
         matColorDefault = material.color;
         mainCamera = Camera.main;
         cameraZDistance = mainCamera.WorldToScreenPoint(transform.position).z;
+
+        //********Mask*********
+        defaultMask = LayerMask.NameToLayer("Parts");
+        highlightMask = LayerMask.NameToLayer("Highlight");
     }
 
     private void OnMouseDrag()
@@ -33,14 +39,17 @@ public class PartRaycast : MonoBehaviour
 
         MoveP();
 
-
         if (CorrectAngle.canSnapNew)
         {
-            material.color = Color.green;
+            var child = transform.GetChild(0).gameObject;
+            child.layer = 9;
+            //material.color = Color.green;
         }
         else
         {
-            material.color = Color.red;
+            var child = transform.GetChild(0).gameObject;
+            child.layer = 11;
+            //material.color = Color.red;
 
         }
     }
@@ -48,9 +57,6 @@ public class PartRaycast : MonoBehaviour
     private void OnMouseUp()
     {
         CursorScript.CursorOn(this);
-        //CursorScript.onDrag = false;
-
-        material.color = matColorDefault;
 
         if (transform.position != GameObject.Find("Earth_10").transform.position)
         {

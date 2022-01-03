@@ -28,9 +28,9 @@ TagManager:
   - Parts
   - Post-processing
   - Bounds
-  - 
-  - 
-  - 
+  - HighlightTrue
+  - Background
+  - HighlightFalse
   - 
   - 
   - 
