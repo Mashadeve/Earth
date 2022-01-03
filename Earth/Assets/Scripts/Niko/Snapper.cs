@@ -5,7 +5,8 @@ using UnityEngine;
 public class Snapper : MonoBehaviour
 {
     public GameObject target, targetAnchor, trail;
-
+    private Vector3 startPos;
+    private bool posIsSet;
 
     private void Start()
     {
@@ -33,6 +34,12 @@ public class Snapper : MonoBehaviour
     private void OnMouseDrag()
     {
         Cursor.visible = false;
+
+        if (startPos != transform.position && !posIsSet)
+        {
+            startPos = transform.position;
+            posIsSet = true;
+        }
     }
 
     private void OnMouseUp()
@@ -43,6 +50,11 @@ public class Snapper : MonoBehaviour
         }
 
         Cursor.visible = true;
+
+        if (transform.position != targetAnchor.transform.position)
+        {
+            transform.position = startPos;
+        }
     }
 
     private void OnTriggerEnter(Collider targetAnchor)
