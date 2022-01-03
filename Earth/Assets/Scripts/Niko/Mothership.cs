@@ -6,14 +6,20 @@ using UnityEngine.SceneManagement;
 
 public class Mothership : MonoBehaviour
 {
+
+    public void GameSelection()
+    {
+        SceneManager.LoadScene("GameSelection");
+    }
+
     public void Earth()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("SamunScene");
     }
 
     public void SolarSystem()
     {
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene("NikonScene");
     }
 
     public void ExitGame()
