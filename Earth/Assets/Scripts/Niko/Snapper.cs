@@ -8,14 +8,16 @@ public class Snapper : MonoBehaviour
     private Vector3 startPos;
     private bool posIsSet;
 
+
+
     private void Start()
     {
         trail.SetActive(false);
     }
+    
 
     private void OnMouseDown()
     {        
-
         if (target.transform.position == targetAnchor.transform.position)
         {
             if (target.GetComponent<Move3D>() == null)
@@ -28,7 +30,6 @@ public class Snapper : MonoBehaviour
         {
             return;
         }
-
     }
 
     private void OnMouseDrag()
