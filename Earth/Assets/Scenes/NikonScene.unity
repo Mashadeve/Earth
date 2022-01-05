@@ -828,7 +828,6 @@ MonoBehaviour:
   target: {fileID: 401256494}
   targetAnchor: {fileID: 1058892956}
   trail: {fileID: 579436249}
-  completed: {fileID: 1739221576}
 --- !u!114 &401256501
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -983,7 +982,6 @@ MonoBehaviour:
   target: {fileID: 470528422}
   targetAnchor: {fileID: 299161916}
   trail: {fileID: 16078078}
-  completed: {fileID: 1739221576}
 --- !u!114 &470528428
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1162,7 +1160,6 @@ MonoBehaviour:
   target: {fileID: 491981083}
   targetAnchor: {fileID: 558619984}
   trail: {fileID: 1846032455}
-  completed: {fileID: 1739221576}
 --- !u!114 &491981090
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1926,7 +1923,6 @@ MonoBehaviour:
   target: {fileID: 717627122}
   targetAnchor: {fileID: 1436256383}
   trail: {fileID: 884554872}
-  completed: {fileID: 1739221576}
 --- !u!114 &717627130
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2580,7 +2576,6 @@ MonoBehaviour:
   target: {fileID: 922472623}
   targetAnchor: {fileID: 28707143}
   trail: {fileID: 1732605496}
-  completed: {fileID: 1739221576}
 --- !u!114 &922472629
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3302,7 +3297,6 @@ MonoBehaviour:
   target: {fileID: 1226314771}
   targetAnchor: {fileID: 546699844}
   trail: {fileID: 744215943}
-  completed: {fileID: 1739221576}
 --- !u!114 &1226314778
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4606,7 +4600,6 @@ MonoBehaviour:
   target: {fileID: 1651569943}
   targetAnchor: {fileID: 1797272155}
   trail: {fileID: 1014889322}
-  completed: {fileID: 1739221576}
 --- !u!114 &1651569949
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4785,7 +4778,6 @@ MonoBehaviour:
   target: {fileID: 1652658174}
   targetAnchor: {fileID: 1500340272}
   trail: {fileID: 1328035637}
-  completed: {fileID: 1739221576}
 --- !u!114 &1652658181
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5126,7 +5118,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1739221577
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5839,7 +5831,6 @@ MonoBehaviour:
   target: {fileID: 2065275855}
   targetAnchor: {fileID: 958643142}
   trail: {fileID: 552422521}
-  completed: {fileID: 1739221576}
 --- !u!114 &2065275862
 MonoBehaviour:
   m_ObjectHideFlags: 0
