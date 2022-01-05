@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PartRaycast : MonoBehaviour
 {
-    private Camera mainCamera;
+    private Camera rayCam;
     private float cameraZDistance;
     private Vector3 startPos;
     private bool posIsSet;
@@ -18,8 +18,10 @@ public class PartRaycast : MonoBehaviour
 
         material = GetComponentInChildren<MeshRenderer>().material;
         matColorDefault = material.color;
-        mainCamera = Camera.main;
-        cameraZDistance = mainCamera.WorldToScreenPoint(transform.position).z;
+        rayCam = GameObject.Find("hightlightCam").GetComponent<Camera>();
+        cameraZDistance = rayCam.WorldToScreenPoint(transform.position).z;
+
+
 
         //********Mask*********
         defaultMask = LayerMask.NameToLayer("Parts");
@@ -70,7 +72,7 @@ public class PartRaycast : MonoBehaviour
         Vector3 corePos = GameObject.Find("Earth_10").transform.position;
 
         Vector3 screenPosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, cameraZDistance);
-        Vector3 newWorldPosition = mainCamera.ScreenToWorldPoint(screenPosition);
+        Vector3 newWorldPosition = rayCam.ScreenToWorldPoint(screenPosition);
 
         transform.position = new Vector3(newWorldPosition.x, newWorldPosition.y, gameObject.transform.position.z);
     }

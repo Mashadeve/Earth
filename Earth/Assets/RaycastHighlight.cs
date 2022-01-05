@@ -20,11 +20,6 @@ public class RaycastHighlight : MonoBehaviour
     private void Update()
     {
         RayCastHit();
-        if (target != null)
-        {
-            Debug.Log("TARGET: " + target);
-        }
-        
     }
 
 
@@ -68,7 +63,7 @@ public class RaycastHighlight : MonoBehaviour
             }
             else if (target.layer == 6)
             {
-                Debug.DrawRay(transform.position, mouseOnScreen.direction * 300, Color.blue);
+                //Debug.DrawRay(transform.position, mouseOnScreen.direction * 300, Color.blue);
                 currentTarget = target;
             }
         }

@@ -86,6 +86,8 @@ public class SnapPoints : MonoBehaviour
                 copyParts[i].transform.position = new Vector3(coreTransform.transform.position.x, coreTransform.transform.position.y);
                 if (copyParts[i].tag != "IsPlaced")
                 {
+                    copyParts[i].layer = 0;
+                    copyParts[i].transform.GetChild(0).gameObject.layer = 0;
                     TagTheObject(copyParts[i]);
                     CursorScript.ResetCursor();
                 }

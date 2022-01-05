@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TestCamera : MonoBehaviour
+public class TiltCamera : MonoBehaviour
 {
     public Transform target;
     [SerializeField] private float maxDistance;

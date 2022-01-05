@@ -13,7 +13,7 @@ public class ReadInput : MonoBehaviour
 
     public void MouseInput()
     {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Ray ray = GameObject.Find("hightlightCam").GetComponent<Camera>().ScreenPointToRay(Input.mousePosition);
         RaycastHit hitData;
 
         Physics.Raycast(ray, out hitData, 200f);
