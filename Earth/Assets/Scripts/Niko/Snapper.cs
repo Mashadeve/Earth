@@ -7,14 +7,12 @@ public class Snapper : MonoBehaviour
     public GameObject target, targetAnchor, trail;
     private Vector3 startPos;
     private bool posIsSet;
-
-
+    [HideInInspector]public bool isPlaced;
 
     private void Start()
     {
         trail.SetActive(false);
     }
-    
 
     private void OnMouseDown()
     {        
@@ -71,6 +69,9 @@ public class Snapper : MonoBehaviour
             trail.SetActive(true);
 
             Destroy(target.GetComponent<Move3D>());
+
+            isPlaced = true;
+
         }
         else
         {
