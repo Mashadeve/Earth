@@ -60,6 +60,8 @@ public class PartRaycast : MonoBehaviour
     {
         CursorScript.CursorOn(this);
 
+        var child = transform.GetChild(0).gameObject;
+        child.layer = 6;
         if (transform.position != GameObject.Find("Earth_10").transform.position)
         {
             transform.position = startPos;

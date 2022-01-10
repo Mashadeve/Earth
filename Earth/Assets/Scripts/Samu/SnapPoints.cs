@@ -10,11 +10,7 @@ public class SnapPoints : MonoBehaviour
     [SerializeField] private GameObject missionPast;
 
     public List<GameObject> originalPart = new List<GameObject>();
-    
-    private CoreAngle coreAngle;
     private GameObject coreTransform;
-
-    //public static bool canSnap;
     private int objectsIsPlaced;
     private float snapRange = 1f;
 
@@ -41,16 +37,12 @@ public class SnapPoints : MonoBehaviour
         {
             originalPart[i].transform.position = new Vector3(-41 + i * 15, 20);
         }
-        //coreAngle = coreQuat.GetComponent<CoreAngle>();
+       
     }
 
 
     private void Update()
     {
-
-        //Debug.Log("copyPartsRot " + copyParts[6].gameObject.name + " = " + copyParts[6].transform.rotation);
-        //Debug.Log("coreRot " + coreTransform.transform.rotation);
-
         if (objectsIsPlaced == originalPart.Count)
         {
             if (missionPast != missionPast.activeInHierarchy)
@@ -67,14 +59,10 @@ public class SnapPoints : MonoBehaviour
             
         }
 
-
         for (int i = 0; i < originalPart.Count; i++)
         {
             Vector3 pos = originalPart[i].transform.position;
             
-            
-            //CalcAngle(coreQuat, originalPart[i]);
-
             if (pos.x - copyParts[i].transform.position.x < snapRange && pos.y - copyParts[i].transform.position.y < snapRange &&
                 pos.x - copyParts[i].transform.position.x > -snapRange && pos.y - copyParts[i].transform.position.y > -snapRange &&
                 CorrectAngle.canSnapNew)
@@ -93,35 +81,9 @@ public class SnapPoints : MonoBehaviour
                 }
                 copyParts[i].GetComponentInChildren<MeshRenderer>().material.color = PartRaycast.matColorDefault;
                 originalPart[i].SetActive(false);
-                //canSnap = false;
-                //CursorScript.onDrag = false;
-                //Cursor.visible = true;
             }
         }
     }
-
-    //private bool CalcAngle(GameObject core, GameObject target)
-    //{
-    //    var coreQuat = core.transform.rotation;
-    //    var targetQuat = target.transform.rotation;
-    //    float angleX = Quaternion.Angle(coreQuat, targetQuat);
-    //    float angleY = Quaternion.Angle(coreQuat, targetQuat);
-
-    //    Debug.Log("AngleX " + (angleX < snapAngle));
-
-    //    if (angleX < snapAngle && angleY < snapAngle)
-    //    {
-    //        canSnap = true;
-    //        return true;
-    //    }
-    //    else
-    //    {
-    //        canSnap = false;
-    //        return false;
-    //    }
-        
-    //}
-
     private void TagTheObject(GameObject obj)
     {
         obj.gameObject.tag = "IsPlaced";
