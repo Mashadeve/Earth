@@ -21,8 +21,6 @@ public class PartRaycast : MonoBehaviour
         rayCam = GameObject.Find("hightlightCam").GetComponent<Camera>();
         cameraZDistance = rayCam.WorldToScreenPoint(transform.position).z;
 
-
-
         //********Mask*********
         defaultMask = LayerMask.NameToLayer("Parts");
         highlightMask = LayerMask.NameToLayer("Highlight");
