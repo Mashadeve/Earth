@@ -4,7 +4,7 @@ public class PartRaycast : MonoBehaviour
 {
     private Camera rayCam;
     private float cameraZDistance;
-    private Vector3 startPos;
+    private Vector3 startPos, offset;
     private bool posIsSet;
     public static Color matColorDefault, currentColor;
     private Material material;
@@ -28,10 +28,15 @@ public class PartRaycast : MonoBehaviour
         highlightMask = LayerMask.NameToLayer("Highlight");
     }
 
+    private void OnMouseDown()
+    {
+        offset = gameObject.transform.position - MoveP();
+    }
+
     private void OnMouseDrag()
     {
         CursorScript.CursorOff(this);
-
+        
         if (startPos != transform.position && !posIsSet)
         {
             startPos = transform.position;
@@ -39,20 +44,17 @@ public class PartRaycast : MonoBehaviour
         }
         CorrectAngle.CalcAngle(core, this.gameObject);
 
-        MoveP();
-
+        transform.position = new Vector3(MoveP().x, MoveP().y, transform.position.z) + offset;
+        
         if (CorrectAngle.canSnapNew)
         {
             var child = transform.GetChild(0).gameObject;
             child.layer = 9;
-            //material.color = Color.green;
         }
         else
         {
             var child = transform.GetChild(0).gameObject;
             child.layer = 11;
-            //material.color = Color.red;
-
         }
     }
 
@@ -66,15 +68,12 @@ public class PartRaycast : MonoBehaviour
         }
     }
 
-    private void MoveP()
+    private Vector3 MoveP()
     {
-        Vector3 pos = transform.position;
-        Vector3 corePos = GameObject.Find("Earth_10").transform.position;
+        Vector3 mousePos = Input.mousePosition;
+        mousePos.z = cameraZDistance;
 
-        Vector3 screenPosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, cameraZDistance);
-        Vector3 newWorldPosition = rayCam.ScreenToWorldPoint(screenPosition);
-
-        transform.position = new Vector3(newWorldPosition.x, newWorldPosition.y, gameObject.transform.position.z);
+        return rayCam.ScreenToWorldPoint(mousePos);
     }
 }
 
