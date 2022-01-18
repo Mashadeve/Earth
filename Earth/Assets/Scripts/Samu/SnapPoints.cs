@@ -12,7 +12,7 @@ public class SnapPoints : MonoBehaviour
     public List<GameObject> originalPart = new List<GameObject>();
     private GameObject coreTransform;
     private int objectsIsPlaced;
-    private float snapRange = 1f;
+    private float snapRange = 0.3f;
 
     private void Awake()
     {
@@ -35,7 +35,9 @@ public class SnapPoints : MonoBehaviour
 
         for (int i = 0; i < originalPart.Count; i++)
         {
-            originalPart[i].transform.position = new Vector3(-41 + i * 15, 20);
+            //originalPart[i].transform.position = new Vector3(-41 + i * 15, 20);
+            originalPart[i].transform.position = new Vector3(-3.8f + i * 1.5f, 1.8f);
+
         }
        
     }
