@@ -45,7 +45,7 @@ public class TextBoxManager : MonoBehaviour
                 }
             }
 
-            Debug.Log("index " + index);
+            //Debug.Log("index " + index);
         }
     }
 

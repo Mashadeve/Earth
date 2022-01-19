@@ -18,12 +18,12 @@ public class RaycastTest : MonoBehaviour
         {
             if (hit.collider.name == "Anchor")
             {
-                Debug.Log("Toteutuu");
+                //Debug.Log("Toteutuu");
                 return;               
             }
 
             hitTarget = hit.collider.gameObject;
-            Debug.Log(hit.collider.name);
+            //Debug.Log(hit.collider.name);
         }
 
         
