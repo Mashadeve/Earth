@@ -1,18 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-2168220201559305264
-MonoBehaviour:
-  m_ObjectHideFlags: 11
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 4
 --- !u!21 &2100000
 Material:
   serializedVersion: 6
@@ -20,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: HighlightMaterialURPTrue
-  m_Shader: {fileID: -6465566751694194690, guid: 4f9fc912af961f942be8774d272faf71, type: 3}
+  m_Name: Shader Graphs_UnlitOutline
+  m_Shader: {fileID: -6465566751694194690, guid: 1e6080fddc5c1d0448035ff1d380787e, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -45,8 +32,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_77567ced6d364853b548aeaf5a513d74: -0.11
-    - power: 0
+    - _FreshnelPower: 1
     m_Colors:
-    - Color_f394be438bcd4d8cb77a1762b1d8234a: {r: 0.007843138, g: 0.07450981, b: 0, a: 1}
+    - _FreshnelColor: {r: 0.5188679, g: 0, b: 0.00957399, a: 0}
   m_BuildTextureStacks: []
