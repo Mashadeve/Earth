@@ -18,7 +18,7 @@ public class RotateX : MonoBehaviour
 
         if (Input.GetAxisRaw("Vertical") > 0 || Input.GetAxisRaw("Vertical") < 0)
         {
-            verticalInput = Input.GetAxisRaw("Vertical") * rotationSpeed * multiplier * 2.5f * Time.fixedDeltaTime;
+            verticalInput = Input.GetAxisRaw("Vertical") * rotationSpeed * multiplier * 10f * Time.deltaTime;
             transform.Rotate(Vector3.right * verticalInput);
         }
     }
