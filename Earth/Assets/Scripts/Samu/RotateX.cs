@@ -10,9 +10,15 @@ public class RotateX : MonoBehaviour
 
     private void Update()
     {
-        if (Input.mouseScrollDelta.y > 0 || Input.mouseScrollDelta.y < 0)
+        //if (Input.mouseScrollDelta.y > 0 || Input.mouseScrollDelta.y < 0)
+        //{
+        //    verticalInput = Input.mouseScrollDelta.y * rotationSpeed * multiplier * 10 * Time.fixedDeltaTime;
+        //    transform.Rotate(Vector3.right * verticalInput);
+        //}
+
+        if (Input.GetAxisRaw("Vertical") > 0 || Input.GetAxisRaw("Vertical") < 0)
         {
-            verticalInput = Input.mouseScrollDelta.y * rotationSpeed * multiplier * 10 * Time.fixedDeltaTime;
+            verticalInput = Input.GetAxisRaw("Vertical") * rotationSpeed * multiplier * 2.5f * Time.fixedDeltaTime;
             transform.Rotate(Vector3.right * verticalInput);
         }
     }
