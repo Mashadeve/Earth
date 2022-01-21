@@ -14,7 +14,7 @@ public class Mothership : MonoBehaviour
 
     public void Earth()
     {
-        SceneManager.LoadScene("SamunScene");
+        SceneManager.LoadScene("TutorialSamu");
     }
 
     public void SolarSystem()
