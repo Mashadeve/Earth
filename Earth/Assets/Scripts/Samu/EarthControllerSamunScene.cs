@@ -18,7 +18,7 @@ public class EarthControllerSamunScene : MonoBehaviour
     {
         if (Input.GetAxis("Horizontal") > 0 || Input.GetAxis("Horizontal") < 0)
         {
-            horizontalInput = Input.GetAxis("Horizontal") * rotationSpeed * multiplier * Time.fixedDeltaTime;
+            horizontalInput = Input.GetAxis("Horizontal") * rotationSpeed * multiplier * Time.deltaTime;
             transform.Rotate(Vector3.down * horizontalInput);
         }
     }
