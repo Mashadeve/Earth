@@ -3312,7 +3312,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6797206745514784400, guid: b7db53e6a68068b4784ed1233ea92ccc, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 209.13
+      value: 758
       objectReference: {fileID: 0}
     - target: {fileID: 6797206745514784400, guid: b7db53e6a68068b4784ed1233ea92ccc, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3354,7 +3354,28 @@ PrefabInstance:
       propertyPath: m_Name
       value: Background
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 6797206745630091196, guid: b7db53e6a68068b4784ed1233ea92ccc, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 3244.0903
+      objectReference: {fileID: 0}
+    - target: {fileID: 6797206745630091196, guid: b7db53e6a68068b4784ed1233ea92ccc, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 2291.9907
+      objectReference: {fileID: 0}
+    - target: {fileID: 6797206745630091196, guid: b7db53e6a68068b4784ed1233ea92ccc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 75.8052
+      objectReference: {fileID: 0}
+    - target: {fileID: 6797206745630091196, guid: b7db53e6a68068b4784ed1233ea92ccc, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 63.26758
+      objectReference: {fileID: 0}
+    - target: {fileID: 6797206745630091196, guid: b7db53e6a68068b4784ed1233ea92ccc, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -480.84668
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 6797206745630091199, guid: b7db53e6a68068b4784ed1233ea92ccc, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b7db53e6a68068b4784ed1233ea92ccc, type: 3}
 --- !u!1 &1302651705
 GameObject:
@@ -4505,6 +4526,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1643784060}
   m_CullTransparentMesh: 1
+--- !u!1 &1648677681 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6797206745630091197, guid: b7db53e6a68068b4784ed1233ea92ccc, type: 3}
+  m_PrefabInstance: {fileID: 1215378305}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1648677682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1648677681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.6415094, g: 0.6415094, b: 0.6415094, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Texture: {fileID: 2800000, guid: 3efd5d95156d8274bbebf0cf0a908998, type: 3}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+--- !u!114 &1648677683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1648677681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fd6d88cec1005c4e8b2f0960e0a49ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spaceMove: {fileID: 2092714583}
 --- !u!1 &1651569943
 GameObject:
   m_ObjectHideFlags: 0
@@ -5953,6 +6019,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: -25
+--- !u!1 &2092714582 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6797206745514784404, guid: b7db53e6a68068b4784ed1233ea92ccc, type: 3}
+  m_PrefabInstance: {fileID: 1215378305}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2092714583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2092714582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaa301a0b6f4fe94a88a33ed9263d412, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  img: {fileID: 1648677682}
+  x: 0
+  y: 0
 --- !u!1 &2141607716
 GameObject:
   m_ObjectHideFlags: 0

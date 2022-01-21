@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class SpaceMove : MonoBehaviour
 {
-    [SerializeField] private RawImage img;
-    [SerializeField] private float x, y;
+    [SerializeField] public RawImage img;
+    [SerializeField] public float x, y;
 
     void Update()
     {
