@@ -7,7 +7,8 @@ public class MovingBackground : MonoBehaviour
 {
     [SerializeField] public SpaceMove spaceMove;
     private bool moveLeft, moveRight;
-
+    public float moveSpeed;
+    public float maxRangeLeft, maxRangeRight;
     private void Start()
     {
         moveLeft = true;
@@ -25,12 +26,12 @@ public class MovingBackground : MonoBehaviour
             Right();
         }
         
-        if (spaceMove.img.uvRect.x > 0.01f)
+        if (spaceMove.img.uvRect.x > maxRangeLeft)
         {
             moveLeft = false;
             moveRight = true;
         }
-        else if (spaceMove.img.uvRect.x < -0.01f)
+        else if (spaceMove.img.uvRect.x < maxRangeRight)
         {
             moveRight = false;
             moveLeft = true;
@@ -40,12 +41,12 @@ public class MovingBackground : MonoBehaviour
     
     public void Left()
     {
-        spaceMove.img.uvRect = new Rect(spaceMove.img.uvRect.position + new Vector2(spaceMove.x + 0.001f, spaceMove.y) * Time.deltaTime, spaceMove.img.uvRect.size);
+        spaceMove.img.uvRect = new Rect(spaceMove.img.uvRect.position + new Vector2(spaceMove.x + moveSpeed, spaceMove.y) * Time.deltaTime, spaceMove.img.uvRect.size);
     }
 
     public void Right()
     {
-        spaceMove.img.uvRect = new Rect(spaceMove.img.uvRect.position + new Vector2(spaceMove.x - 0.001f, spaceMove.y) * Time.deltaTime, spaceMove.img.uvRect.size);
+        spaceMove.img.uvRect = new Rect(spaceMove.img.uvRect.position + new Vector2(spaceMove.x - moveSpeed, spaceMove.y) * Time.deltaTime, spaceMove.img.uvRect.size);
     }
 
 }

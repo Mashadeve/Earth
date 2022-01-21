@@ -4571,6 +4571,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spaceMove: {fileID: 2092714583}
+  moveSpeed: 0.001
+  maxRangeLeft: 0.1
+  maxRangeRight: -0.1
 --- !u!1 &1651569943
 GameObject:
   m_ObjectHideFlags: 0
