@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/GameSelection.unity
     guid: c4d4fbd3e25e9c04fb70fca55a107376
   - enabled: 1
+    path: Assets/Scenes/TutorialSamu.unity
+    guid: c4095328d7a09ce49bb55ad21b512744
+  - enabled: 1
     path: Assets/Scenes/SamunScene.unity
     guid: b7cc4925c5c70a04e898da78be153707
   - enabled: 1

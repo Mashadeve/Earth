@@ -7,25 +7,36 @@ public class levelLoader : MonoBehaviour
 {
     public Animator animator;
     public int waitTime = 1;
-    private int _levelIndex;
+    public int _levelIndex;
 
-    
+    private void Start()
+    {
+        _levelIndex = SceneManager.GetActiveScene().buildIndex;
+    }
+
     public void loadGameSelection()
     {
         _levelIndex = 0;
         StartCoroutine(LoadScene(0));
     }
 
-    public void loadSamunScene()
+    public void loadSamunTutorial()
     {
         _levelIndex = 1;
         StartCoroutine(LoadScene(1));
     }
 
-    public void loadNikonScene()
+    public void loadSamunScene()
     {
         _levelIndex = 2;
         StartCoroutine(LoadScene(2));
+    }
+
+
+    public void loadNikonScene()
+    {
+        _levelIndex = 3;
+        StartCoroutine(LoadScene(3));
     }
 
 
