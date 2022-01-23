@@ -43,7 +43,7 @@ public class TutorialController : MonoBehaviour
 
     private IEnumerator screenTimer()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(7.5f);
         NextScreen();
         StartCoroutine(screenTimer());
     }
