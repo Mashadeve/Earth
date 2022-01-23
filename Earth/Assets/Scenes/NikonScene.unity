@@ -1380,9 +1380,10 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Find the right orbits for the planets
 
+    grab the planets with - Mouse
+    1 -
 
-    You can zoom in and out using
-    mousewheel'
+    You can also zoom in and out with Mousewheel'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 13f3b0bea14d81a4f84f32a5994426f7, type: 2}
   m_sharedMaterial: {fileID: 3284829822456150236, guid: 13f3b0bea14d81a4f84f32a5994426f7, type: 2}
@@ -4454,7 +4455,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1587822484}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
