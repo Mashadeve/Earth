@@ -228,8 +228,9 @@ GameObject:
   - component: {fileID: 388926256}
   - component: {fileID: 388926258}
   - component: {fileID: 388926257}
+  - component: {fileID: 388926259}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: EarthTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -313,7 +314,7 @@ MonoBehaviour:
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
-  m_characterSpacing: 0
+  m_characterSpacing: 6
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -353,6 +354,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 388926255}
   m_CullTransparentMesh: 1
+--- !u!95 &388926259
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 388926255}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 91b1e90def4f92a41ba9d4d0c41ebe8f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &420869214
 GameObject:
   m_ObjectHideFlags: 0
@@ -498,6 +518,7 @@ GameObject:
   - component: {fileID: 440453176}
   - component: {fileID: 440453178}
   - component: {fileID: 440453177}
+  - component: {fileID: 440453179}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -521,7 +542,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 3.1, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &440453177
@@ -581,7 +602,7 @@ MonoBehaviour:
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
-  m_characterSpacing: 0
+  m_characterSpacing: 6
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -621,6 +642,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 440453175}
   m_CullTransparentMesh: 1
+--- !u!95 &440453179
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 440453175}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 04384d78ae03cae4fa3304a0c050d0c9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &553948705
 GameObject:
   m_ObjectHideFlags: 0
@@ -1072,6 +1112,7 @@ GameObject:
   - component: {fileID: 826349050}
   - component: {fileID: 826349049}
   - component: {fileID: 826349048}
+  - component: {fileID: 826349051}
   m_Layer: 5
   m_Name: EarthGameButton
   m_TagString: Untagged
@@ -1193,6 +1234,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 826349046}
   m_CullTransparentMesh: 1
+--- !u!114 &826349051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 826349046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1670352d75c56840a90e4ef4807a873, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &974264773
 GameObject:
   m_ObjectHideFlags: 0
@@ -1711,6 +1764,7 @@ GameObject:
   - component: {fileID: 1285181847}
   - component: {fileID: 1285181846}
   - component: {fileID: 1285181845}
+  - component: {fileID: 1285181848}
   m_Layer: 5
   m_Name: SolarSystemButton
   m_TagString: Untagged
@@ -1832,6 +1886,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1285181843}
   m_CullTransparentMesh: 1
+--- !u!114 &1285181848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1285181843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b38775ceffc69ac4ab3fe1da2830237a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1339355443
 GameObject:
   m_ObjectHideFlags: 0
