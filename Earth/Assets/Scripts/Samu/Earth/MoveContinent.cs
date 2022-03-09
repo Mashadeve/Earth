@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PartRaycast : MonoBehaviour
+public class MoveContinent : MonoBehaviour
 {
     private Camera rayCam;
     private float cameraZDistance;
@@ -14,7 +14,7 @@ public class PartRaycast : MonoBehaviour
 
     private void Start()
     {
-        core = GameObject.Find("Core");
+        core = GameObject.Find("EarthCore");
 
         material = GetComponentInChildren<MeshRenderer>().material;
         matColorDefault = material.color;
@@ -22,8 +22,8 @@ public class PartRaycast : MonoBehaviour
         cameraZDistance = rayCam.WorldToScreenPoint(transform.position).z;
 
         //********Mask*********
-        defaultMask = LayerMask.NameToLayer("Parts");
-        highlightMask = LayerMask.NameToLayer("Highlight");
+        //defaultMask = LayerMask.NameToLayer("Parts");
+        //highlightMask = LayerMask.NameToLayer("Highlight");
     }
 
     private void OnMouseDown()

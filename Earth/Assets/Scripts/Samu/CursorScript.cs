@@ -4,12 +4,12 @@ using UnityEngine;
 
 public static class CursorScript
 {
-    public static void CursorOff(PartRaycast currentScript)
+    public static void CursorOff(MoveContinent currentScript)
     {
         Cursor.visible = false;
     }
 
-    public static void CursorOn(PartRaycast currentScrip)
+    public static void CursorOn(MoveContinent currentScrip)
     {
         Cursor.visible = true;
     }
